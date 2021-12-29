@@ -71,11 +71,11 @@
               <img src="<?php echo base_url('assets/dist/img/user2-160x160.jpg'); ?>" class="img-circle " alt="User Image">
             </div>
             <div class="info">
-              <a href="#" class="d-block">Nama Pengguna</a>
+              <p>Hai, <?php echo $_SESSION['nama']; ?></p>
             </div>
           </div>
         <div class="dropdown-divider"></div>
-        <a href="<?php echo base_url('login')?>" class="dropdown-item dropdown-footer">Logout</a>
+        <a href="<?php echo base_url('login/logout')?>" class="dropdown-item dropdown-footer">Logout</a>
         </div>
       </li>
     </ul>
