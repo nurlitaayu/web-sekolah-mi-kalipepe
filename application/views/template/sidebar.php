@@ -30,11 +30,15 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="<?php echo base_url('dataguru') ?>" class="nav-link">
+              <i class="nav-icon far fa-user"></i>
+              <p>Data Guru</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
               <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
+              <p>Gallery</p>
             </a>
           </li>
           <li class="nav-item">

@@ -11,7 +11,7 @@ class Login extends CI_Controller{
 	function index(){
 
 		if($this->session->userdata('status') == "login"){
-			redirect(base_url("welcome"));
+			redirect(base_url("dashboard"));
 		}else{
 			$this->load->view('login');
 		}
@@ -33,7 +33,7 @@ class Login extends CI_Controller{
 				'status' => "login"
 			);
 			$this->session->set_userdata($data_session);
-			redirect(base_url("welcome"));
+			redirect(base_url("dashboard"));
 		}else{
 			echo "Username dan Password salah!!";
 		}
