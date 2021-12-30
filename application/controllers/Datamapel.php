@@ -10,6 +10,6 @@ class Datamapel extends CI_Controller {
 			'title2'=> 'Mata Pelajaran',
 			'isi'	=> 'admin/v_mapel'		
 			);
-		$this->load->view('admin/v_mapel');
+		$this->load->view('admin/v_mapel',$data,FALSE);
 	}
 }
