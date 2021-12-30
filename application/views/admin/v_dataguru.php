@@ -53,8 +53,8 @@
               </div>
             </div>
             <!-- /.card-header -->
-            <div class="card-body table-responsive p-0" style="height: 300px;">
-              <table class="table table-head-fixed text-nowrap">
+            <div class="card-body table-responsive p-0 text-center" style="height: 300px;">
+              <table class="table table-head-fixed text-nowrap table-bordered table-hover">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -69,23 +69,26 @@
                     <th>Aksi</th>
                   </tr>
                 </thead>
+                <?php $no = 1;
+                foreach($guru as $ssw) : ?>
                 <tbody>
-                  <!---<tr>
-                    <td>1</td>
-                    <td>Guru 1</td>
-                    <td>11010101</td>
-                    <td>Lumajang</td>
-                    <td>31/12/1996</td>
-                    <td>Guru Pengajar</td>
-                    <td>Guru Bahasa</td>
-                    <td>S1 Sarjana Pendidikan</td>
-                    <td>Foto</td>
+                  <tr>
+                    <td><?= $no++ ?></td>
+                    <td><?= $ssw->nama_guru ?></td>
+                    <td><?= $ssw->nip ?></td>
+                    <td><?= $ssw->tempat_lahir ?></td>
+                    <td><?= $ssw->tgl_lahir ?></td>
+                    <td><?= $ssw->id_jabatan ?></td>
+                    <td><?= $ssw->id_mapel ?></td>
+                    <td><?= $ssw->pendidikan ?></td>
+                    <td><?= $ssw->foto_guru ?></td>
                     <td>
-                      <button class="btn btn-xs btn-warning"><i class="fas fa-edit" style="color: #fff;"></i></button>
-                      <button class="btn btn-xs btn-danger"><i class="fas fa-trash"></i></button>
+                      <button class="btn btn-sm btn-warning"><i class="fas fa-edit" style="color: #fff;"></i></button>
+                      <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
                     </td>
-                  </tr>--->
+                  </tr>
                 </tbody>
+                <?php endforeach ?>
               </table>
             </div>
             <!-- /.card-body -->
