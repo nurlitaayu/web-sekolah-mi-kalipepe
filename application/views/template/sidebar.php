@@ -30,7 +30,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo base_url('dataguru') ?>" class="nav-link">
+            <a href="<?php echo base_url('Dataguru'); ?>" class="nav-link">
               <i class="nav-icon far fa-user"></i>
               <p>Data Guru</p>
             </a>
