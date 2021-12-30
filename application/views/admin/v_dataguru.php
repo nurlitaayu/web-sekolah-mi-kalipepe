@@ -38,7 +38,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <button class="btn btn-xs btn-primary card-title">Tambah Guru</button>
+              <button class="btn btn-xs btn-primary card-title" data-toggle="modal" data-target="#tambah-guru">Tambah Guru</button>
 
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -97,7 +97,98 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
+      <div class="modal fade" id="tambah-guru">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Tambah Guru</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Nama</label>
+                      <input class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Tempat Lahir</label>
+                      <input class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Nip</label>
+                      <input class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Tanggal Lahir</label>
+                      <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- select -->
+                      <div class="form-group">
+                        <label>Jabatan</label>
+                        <select class="custom-select">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Pendidikan</label>
+                        <input class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Pengajar</label>
+                        <select class="custom-select">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                        </select>
+                      </div>
+                      <label for="exampleInputFile">Foto</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text">Upload</span>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 <?php $this->load->view('template/footer.php'); ?>
+<script type="text/javascript">
+   $('#reservationdate').datetimepicker({
+        format: 'L'
+    });
+</script>
 </body>
 </html>
