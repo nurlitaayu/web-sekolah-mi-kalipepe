@@ -27,6 +27,18 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="<?php echo base_url('datamapel'); ?>" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>Data Mata Pelajaran</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('datajabatan'); ?>" class="nav-link">
+              <i class="nav-icon fas fa-graduation-cap"></i>
+              <p>Data Jabatan</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
