@@ -70,7 +70,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <!---<tr>
                     <td>1</td>
                     <td>Guru 1</td>
                     <td>11010101</td>
@@ -84,7 +84,7 @@
                       <button class="btn btn-xs btn-warning"><i class="fas fa-edit" style="color: #fff;"></i></button>
                       <button class="btn btn-xs btn-danger"><i class="fas fa-trash"></i></button>
                     </td>
-                  </tr>
+                  </tr>--->
                 </tbody>
               </table>
             </div>
