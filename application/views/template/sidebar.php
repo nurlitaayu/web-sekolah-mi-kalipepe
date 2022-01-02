@@ -2,7 +2,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     
-    <a href="index.html" class="brand-link">
+    <a href="index2.html" class="brand-link">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <img class="logo-mini brand-bar" src="assets/main/logo.png" width="40" height="40"></span><br>
       <!-- logo for regular state and mobile devices -->

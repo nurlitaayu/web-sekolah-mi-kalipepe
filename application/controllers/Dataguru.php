@@ -10,6 +10,10 @@ class Dataguru extends CI_Controller {
 		
 	}
 
+	public function simpan(){
+		return "saya dari fungsi simpan"; 
+	}
+
 	public function index()	{
 		
 		$data = array(
