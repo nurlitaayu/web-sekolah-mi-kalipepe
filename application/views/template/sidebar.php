@@ -4,8 +4,10 @@
     
     <a href="index2.html" class="brand-link">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <img class="logo-mini brand-bar" src="assets/main/logo.png" width="40" height="40"></span><br>
-      <span class="brand-text font-weight-light">Mi Muhammadiyah<br>Kalipepe</span>
+      <div class="brand">
+        <img src="assets/main/logo.png" width="50" height="50">
+        <h1 class="brand-name">MI MUHAMMADIYAH <br>KALIPEPE</h1>
+      </div>
     </a>
 
     <!-- Sidebar -->
