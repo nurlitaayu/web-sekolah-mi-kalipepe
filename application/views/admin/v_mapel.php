@@ -62,7 +62,7 @@
                   </tr>
                 </thead>
                 <?php $no = 1;
-                foreach($data_mapel as $ssw) : ?>
+                foreach($mapel as $ssw) : ?>
                 <tbody>
                   <tr>
                     <td><?= $no++ ?></td>
