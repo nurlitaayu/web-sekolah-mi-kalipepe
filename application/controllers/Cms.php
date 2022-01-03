@@ -6,6 +6,9 @@ class Cms extends CI_Controller {
 	public function index()	{
 		$this->load->view('admin/cms/v_listpost');
 	}
+	public function pages() {
+		$this->load->view('admin/cms/v_page');
+	}
 	public function kategori() {
 		$this->load->view('admin/cms/v_kategori');
 	}
