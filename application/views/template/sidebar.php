@@ -5,35 +5,53 @@
     <a href="index2.html" class="brand-link">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <img class="logo-mini brand-bar" src="assets/main/logo.png" width="40" height="40"></span><br>
-      <!-- logo for regular state and mobile devices -->
       <span class="brand-text font-weight-light">Mi Muhammadiyah<br>Kalipepe</span>
     </a>
-
-    <!---<a href="index3.html" class="brand-link">
-      <img src="assets/main/logo.png" width="30" height="30"><br>
-      <span class="brand-text font-weight-light">Mi Muhammadiyah <br>Kalipepe</span>
-    </a>--->
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <!--<li class="nav-item menu-open">
+
+          <!-- ojo dihapus iki gae nggolek komponen penting -->
+          <li class="nav-item menu-open">
             <a href="https://adminlte.io/themes/v3/" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Template</p>
             </a>
-          </li>-->
-          <li class="nav-header">Menu</li>
+          </li>
+          <!-- sek butuh soale durung mari template e -->
+
           <li class="nav-item">
             <a href="<?php echo base_url('dashboard'); ?>" class="nav-link">
               <i class="nav-icon fas fa-desktop"></i>
               <p>Dashboard</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>Content Management
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="../layout/top-nav.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Post</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Category</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-header">Menu</li>
           <li class="nav-item">
             <a href="<?php echo base_url('dataguru'); ?>" class="nav-link">
               <i class="nav-icon far fa-user"></i>
@@ -52,14 +70,6 @@
               <p>Data Jabatan</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
-              <p>
-                Mailbox
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
