@@ -130,7 +130,7 @@
   $('#tombolsimpan').on('click',function(){
     var $nama =$('#mata_pelajaran').val();
     $.ajax({
-      url:"<?php echo site_url("datamapel/simpan")?>",
+      url:"<?php echo site_url("Datamapel/simpan")?>",
       type:"POST",
       success:function(hasil){
         alert(hasil);
