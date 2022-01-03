@@ -3,9 +3,8 @@
     <!-- Brand Logo -->
     
     <a href="<?php echo base_url('home') ?>" class="brand-link">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
       <div class="brand">
-        <img src="assets/main/logo.png">
+        <img src="<?php echo base_url('assets/main/logo.png') ?>">
         <h1 class="brand-name">MI MUHAMMADIYAH <br>KALIPEPE</h1>
       </div>
     </a>
