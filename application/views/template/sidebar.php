@@ -2,10 +2,10 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     
-    <a href="index2.html" class="brand-link">
+    <a href="<?php echo base_url('home') ?>" class="brand-link">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <div class="brand">
-        <img src="assets/main/logo.png" width="50" height="50">
+        <img src="assets/main/logo.png">
         <h1 class="brand-name">MI MUHAMMADIYAH <br>KALIPEPE</h1>
       </div>
     </a>
@@ -40,15 +40,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../layout/top-nav.html" class="nav-link">
+                <a href="<?php echo base_url('cms') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create Post</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                <a href="<?php echo base_url('cms/kategori') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Create Category</p>
+                  <p>Daftar Kategori</p>
                 </a>
               </li>
             </ul>
