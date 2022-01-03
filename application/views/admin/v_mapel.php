@@ -128,8 +128,7 @@
 </script>
   <script>
   $('#tombolsimpan').on('click',function(){
-    var $nama =$('#nama_mapel').val();
-
+    var $nama =$('#mata_pelajaran').val();
     $.ajax({
       url:"<?php echo site_url("datamapel/simpan")?>",
       type:"POST",
