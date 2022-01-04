@@ -10,9 +10,13 @@ class Dataguru extends CI_Controller {
 		
 	}
 
-	public function simpan(){
-		return "saya dari fungsi simpan"; 
-	}
+	// public function simpan(){
+		
+	// 	$hasil['sukses']=false;
+	// 	$hasil['eror']="ada error terjadi";
+
+	// 	return json_encode($hasil); 
+	// }
 
 	public function index()	{
 		
@@ -23,5 +27,10 @@ class Dataguru extends CI_Controller {
 			'isi'	=> 'admin/v_dataguru'		 
 		);
 		$this->load->view('admin/v_dataguru',$data);
+	}
+
+	public function tambah(){
+		$data['title']='siswa';
+		
 	}
 }
