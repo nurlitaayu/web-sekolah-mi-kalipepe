@@ -87,7 +87,7 @@
 
 <!-- /.content-wrapper -->
 <div class="modal fade" id="tambah-guru">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
   <!--- <form action="<?= base_url('dataguru/tambah_aksi')?>"method="POST"> -->
     <div class="modal-content">
       <div class="modal-header">
@@ -105,7 +105,7 @@
             </div>
             <div class="form-group">
               <label>Page Body</label>
-              <input type="text" class="form-control" id="exampleInputEmail1">
+              <textarea id="ckeditor"></textarea>
             </div>
             <div class="form-group">
               <label for="exampleInputFile">Select Picture</label>
@@ -137,6 +137,15 @@
   </div>
 </div>
 <!-- /.modal -->
+<script type="text/javascript" src="<?php echo base_url('assets/main/vendor/ckeditor/ckeditor.js') ?>"></script>
 <?php $this->load->view('template/footer.php'); ?>
+<script>
+var ckeditor = CKEDITOR.replace('ckeditor',{
+      height:'400px'
+});
+
+CKEDITOR.disableAutoInline = true;
+CKEDITOR.inline('editable');
+</script>
 </body>
 </html>
