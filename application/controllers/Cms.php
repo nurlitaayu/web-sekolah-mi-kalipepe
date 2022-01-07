@@ -19,6 +19,7 @@ class Cms extends CI_Controller {
 	public function kategori() {
 		$this->load->view('admin/cms/v_kategori');
 	}
+	//Create Controller Kategori
 	public function tambah_kategori(){
 		if ($this->input->is_ajax_request()){
 			$this->form_validation->set_rules('kategori', 'Kategori', 'required');
@@ -37,11 +38,38 @@ class Cms extends CI_Controller {
 			echo "no ajacasd";
 		}
 	}
+	//Read Controller Kategori
 	public function tampil_kategori(){
 		if($this->input->is_ajax_request()){
 			$posts = $this->m_cms->get_kategori();
 			echo json_encode($posts);
 		}
+	}
+	//Read Controller Kategori
+	public function edit_kategori(){
+		if ($this->input->is_ajax_request()) {
+			$edit_id = $this->input->post("edit_id");
+
+			if ($post = $this->m_cms->update_kategori($edit_id)){
+				$data = array('responce' => "success", "post" => $post);
+			}else{
+				$data = array('responce' => "error", 'message' => 'failed');
+			}
+			echo json_encode($data);
+		}
+	}
+	//Delete Controller Kategori
+	public function hapus_kategori(){
+		if ($this->input->is_ajax_request()) {
+			$del_id = $this->input->post('del_id');
+
+			if ($this->m_cms->delete_kategori($del_id)) {
+				$data = array('responce' => "success");
+			}else{
+				$data = array('responce' => "error");
+			}
+		}
+		echo json_encode($data);
 	}
 
 }

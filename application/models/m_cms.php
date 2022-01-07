@@ -15,6 +15,18 @@ class M_cms extends CI_Model{
 			return $query->result();
 		}
 	}
+	public function update_kategori($id){
+		$this->db->select("*");
+		$this->db->from("tb_kategori");
+		$this->db->where("id_kategori", $id);
+		$query = $this->db->get();
+		if (count($query->result()) > 0) {
+			return $query->row();
+		}
+	}
+	public function delete_kategori($id)	{
+		return $this->db->delete('tb_kategori', array('id_kategori' => $id));
+	}
 }
 
  ?>

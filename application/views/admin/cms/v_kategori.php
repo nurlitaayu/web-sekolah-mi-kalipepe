@@ -104,6 +104,7 @@
 <!-- /.modal -->
 
 <script src="<?php echo base_url('assets/main/vendor/jquery/jquery-2.1.4.min.js')?>"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Create Data Ajax -->
 <script>
@@ -122,7 +123,7 @@
           kategori: kategori
         },
         success: function(data){
-          console.log(data);
+          read_kategori();
           $('#modal_form').modal('hide');
           alert("Data Berhasil Disimpan");
         }
@@ -141,10 +142,11 @@
       dataType: "json",
       success: function(data){
         var tbody = "";
+        var no = "1";
 
         for(var key in data){
           tbody += "<tr>";
-          tbody += "<td>"+ data[key]['id_kategori']+"</td>";
+          tbody += "<td>"+ no++ +"</td>";
           tbody += "<td>"+ data[key]['kategori']+"</td>";
           tbody += `<td>
                       <button class="btn btn-xs btn-warning" id="edit" value="${data[key]['id_kategori']}"><i class="fas fa-edit" style="color: #fff;"></i></button>&nbsp
@@ -157,7 +159,90 @@
     });
   }
   read_kategori();
+
+  //Update Kategori
+  $(document).on("click", "#edit", function(e){
+    e.preventDefault();
+
+    var edit_id = $(this).attr("value");
+
+    if (edit_id == ""){
+      alert("Edit id required");
+    }else{
+      $.ajax({
+        url: "<?php echo base_url('cms/edit_kategori') ?>",
+        type: "post",
+        dataType: "json",
+        data: {
+          edit_id: edit_id
+        },
+        success: function(data){
+          console.log(data);
+        }
+      });
+    }
+  });
+
+  //Delete Kategori
+  $(document).on("click", "#delete", function(e){
+    e.preventDefault();
+
+    var del_id = $(this).attr("value");
+    
+    if (del_id == "") {
+      alert("Delete id required");
+    }else{
+      const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger mr-2'
+      },
+      buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        $.ajax({
+          url: "<?php echo base_url('cms/hapus_kategori') ?>",
+          type: "post",
+          dataType: "json",
+          data: {
+            del_id: del_id
+          },
+          success: function(data){
+            read_kategori();
+            if (data.responce == "success"){
+              swalWithBootstrapButtons.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+              )
+            }
+          }
+        });
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        )
+      }
+    })
+    }
+  })
 </script>
-<?php $this->load->view('template/footer.php'); ?>
+
+<?php $this->load->view('template/footer') ?>
 </body>
 </html>
