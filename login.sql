@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2021 at 10:19 AM
+-- Generation Time: Jan 07, 2022 at 10:04 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -34,10 +34,17 @@ CREATE TABLE `tb_guru` (
   `nama_guru` varchar(25) NOT NULL,
   `tempat_lahir` varchar(15) NOT NULL,
   `tgl_lahir` date NOT NULL,
-  `id_mapel` int(2) NOT NULL,
+  `id_mapel` int(2) DEFAULT NULL,
   `pendidikan` varchar(5) NOT NULL,
   `foto_guru` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_guru`
+--
+
+INSERT INTO `tb_guru` (`id_guru`, `id_jabatan`, `nip`, `nama_guru`, `tempat_lahir`, `tgl_lahir`, `id_mapel`, `pendidikan`, `foto_guru`) VALUES
+(1, 1, '333', 'AHMAD JUNAEDI, SH', 'jember', '2021-12-01', NULL, 's1', '');
 
 -- --------------------------------------------------------
 
@@ -47,8 +54,40 @@ CREATE TABLE `tb_guru` (
 
 CREATE TABLE `tb_jabatan` (
   `id_jabatan` int(11) NOT NULL,
-  `posisi_jabatan` int(11) NOT NULL
+  `posisi_jabatan` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_jabatan`
+--
+
+INSERT INTO `tb_jabatan` (`id_jabatan`, `posisi_jabatan`) VALUES
+(1, 'kepala sekolah');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_kategori`
+--
+
+CREATE TABLE `tb_kategori` (
+  `id_kategori` int(11) NOT NULL,
+  `kategori` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_kategori`
+--
+
+INSERT INTO `tb_kategori` (`id_kategori`, `kategori`) VALUES
+(1, 'Berita'),
+(2, 'Prestasi'),
+(3, 'galeri'),
+(4, 'asdasd'),
+(5, 'asd'),
+(6, 'qq'),
+(7, 'asdasdas'),
+(8, 'coba lagi');
 
 -- --------------------------------------------------------
 
@@ -100,6 +139,12 @@ ALTER TABLE `tb_jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
+-- Indexes for table `tb_kategori`
+--
+ALTER TABLE `tb_kategori`
+  ADD PRIMARY KEY (`id_kategori`);
+
+--
 -- Indexes for table `tb_mapel`
 --
 ALTER TABLE `tb_mapel`
@@ -119,13 +164,19 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb_kategori`
+--
+ALTER TABLE `tb_kategori`
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_mapel`
