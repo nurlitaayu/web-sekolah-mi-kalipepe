@@ -108,10 +108,11 @@
     </div>
     <!-- /.content -->
   </div>
+
   <!-- modal edit guru -->
       <div class="modal fade" id="edit-guru">
         <div class="modal-dialog modal-lg">
-        <form action="<?= base_url('dataguru/tambah_aksi')?>"method="POST">
+        <form s>
           <div class="modal-content">
             
             <div class="modal-header">
@@ -206,8 +207,9 @@
               $('#tempat_lahir').val(tempat_lahir);
               $('#tgl_lahir').val(tgl_lahir);
               $('#id_jabatan').val(id_jabatan);
-              $('#id_mapel').val(id_mapel);
               $('#pendidikan').val(pendidikan);
+              $('#id_mapel').val(id_mapel);
+              
             }
           </script>
           <!-- /.modal-content -->
@@ -219,7 +221,7 @@
       <!-- modal tambah guru -->
       <div class="modal fade" id="tambah-guru">
         <div class="modal-dialog modal-lg">
-        <form action="<?= base_url('dataguru/tambah_aksi')?>"method="POST">
+        <form >
           <div class="modal-content">
             
             <div class="modal-header">
@@ -229,6 +231,7 @@
               </button>
             </div>
             <div class="modal-body">
+              <?php echo form_open_multipart('home/proses_tambahdata'); ?>
               <form>
                 <div class="row">
                   <div class="col-sm-6">
@@ -238,13 +241,13 @@
                     </div>
                     <div class="form-group">
                       <label>Tempat Lahir</label>
-                      <input type="text"  class="form-control">
+                      <input type="text" value="Tempat Lahir" class="form-control">
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Nip</label>
-                      <input type="text"  class="form-control">
+                      <input type="text" value="Masukan NIP" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Tanggal Lahir</label>
@@ -263,7 +266,7 @@
                       <!-- select -->
                       <div class="form-group">
                         <label>Jabatan</label>
-                        <select type="text"  class="custom-select">
+                        <select type="text" value="Pilih jabatan" class="custom-select">
                           <option>option 1</option>
                           <option>option 2</option>
                         </select>
@@ -282,7 +285,8 @@
                         </select>
                       </div>
                       <label for="exampleInputFile">Foto</label>
-                        <div class="input-group">
+                        <div class="input-g
+                        roup">
                           <div class="custom-file">
                             <input type="file" class="custom-file-input" >
                             <label class="custom-file-label" for="foto">Choose file</label>
@@ -299,25 +303,13 @@
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="tombolsimpan">Save changes</button>
-             
+              <button type="submit" class="btn btn-primary" >Save changes</button>
+              <?php echo form_close();?>
+              
             </div>
             
           </div>
           </form>
-
-          
-          <!-- <script>
-            function editdata(nama_guru,nip,tempat_lahir,tgl_lahir,id_jabatan,id_mapel,pendidikan){
-              $('#nama_guru').val(nama_guru);
-              $('#nip').val(nip);
-              $('#tempat_lahir').val(tempat_lahir);
-              $('#tgl_lahir').val(tgl_lahir);
-              $('#id_jabatan').val(id_jabatan);
-              $('#id_mapel').val(id_mapel);
-              $('#pendidikan').val(pendidikan);
-            }
-          </script> -->
           <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
