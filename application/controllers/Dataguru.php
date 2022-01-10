@@ -30,7 +30,24 @@ class Dataguru extends CI_Controller {
 	}
 
 	public function tambah(){
-		$data['title']='siswa';
+		$data = [
+           $nama= "nama_guru"=>$this->input->post('nama'),
+            "nip"=>$this->input->post('nip'),
+            "tempat_lahir"=>$this->input->post('tempatlahir'),
+            "tgl_lahir"=>$this->input->post('tgllahir'),
+            "id_jabatan"=>$this->input->post('jabatan'),
+            "pendidikan"=>$this->input->post('pendidikan'),
+            "id_mapel"=>$this->input->post('mapel')
+            
+        ];
 		
+		'nama' => $nama;
+		nip
+		tempatlahir
+		tgllahir
+		jabatan
+		pendidikan
+		mapel
+
 	}
 }
