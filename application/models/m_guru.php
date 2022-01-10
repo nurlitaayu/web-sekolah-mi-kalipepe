@@ -2,22 +2,27 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class m_guru extends CI_Model {
+class M_guru extends CI_Model {
 
-    public function get_dataguru($table)
-    {
-        
-        return $this->db->get($table);
-        
-        
-        
+    public function read_guru(){
+        $this->db->select('*');
+        $this->db->from('tb_guru');
+        $query = $this->db->get();
+        return $query->result();
     }
-
-    public function proses_tambahdata($data,$table){
-        
-        $this->db->insert($table, $data);
-        
+    public function d_jabatan(){
+        return $this->db->get('tb_jabatan');
     }
+    public function add_guru($data,$table){
+        $this->db->insert($table,$data);
+        $this->db->insert('tb_guru', $data);
+    }
+    public function delete_guru($id_guru, $foto_guru){
+        $this->db->where('id_guru', $id_guru);
+        $this->db->delete('tb_guru', array('id_guru' => $id_guru));
+        unlink(FCPATH."/foto/fotoguru/".$foto_guru);
+    }
+    
 
 }
 
