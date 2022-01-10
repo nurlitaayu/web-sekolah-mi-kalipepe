@@ -25,6 +25,7 @@ class Dataguru extends CI_Controller {
         $this->load->library('upload', $config);
         $this->upload->initialize($config);  
 
+<<<<<<< HEAD
         if ( ! $this->upload->do_upload('foto_guru')){
             
             print_r($this->upload->display_errors());
@@ -65,5 +66,11 @@ class Dataguru extends CI_Controller {
         redirect ('dataguru');
 
     }
+=======
+	public function tambah(){
+		$data['title']='siswa';
+		
+	}
+>>>>>>> parent of 50b9af8 (#crud data guru)
 }
         

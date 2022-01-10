@@ -231,28 +231,28 @@
               </button>
             </div>
             <div class="modal-body">
-              <?php echo form_open_multipart('dataguru/tambah'); ?>
+              <?php echo form_open_multipart('home/proses_tambahdata'); ?>
               <form>
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Nama</label>
-                      <input type="text" name="nama" value="Nama Lengkap"class="form-control">
+                      <input type="text" value="Nama Lengkap"class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Tempat Lahir</label>
-                      <input type="text" name="tempatlahir" value="Tempat Lahir" class="form-control">
+                      <input type="text" value="Tempat Lahir" class="form-control">
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Nip</label>
-                      <input type="text" name="nip" value="Masukan NIP" class="form-control">
+                      <input type="text" value="Masukan NIP" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Tanggal Lahir</label>
                       <div class="input-group date" id="reservationdate2" data-target-input="nearest">
-                        <input type="text" name="tgllahir" class="form-control datetimepicker-input" data-target="#reservationdate2"/>
+                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate2"/>
                         <div class="input-group-append" data-target="#reservationdate2" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             
@@ -266,20 +266,20 @@
                       <!-- select -->
                       <div class="form-group">
                         <label>Jabatan</label>
-                        <select name="jabatan" type="text" value="Pilih jabatan" class="custom-select">
+                        <select type="text" value="Pilih jabatan" class="custom-select">
                           <option>option 1</option>
                           <option>option 2</option>
                         </select>
                       </div>
                       <div class="form-group">
                         <label>Pendidikan</label>
-                        <input type="text" name="pendidikan" class="form-control">
+                        <input type="text"  class="form-control">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Pengajar</label>
-                        <select type="text" name="mapel" class="custom-select">
+                        <select type="text" class="custom-select">
                           <option>option 1</option>
                           <option>option 2</option>
                         </select>
@@ -288,7 +288,7 @@
                         <div class="input-g
                         roup">
                           <div class="custom-file">
-                            <input type="file" name="foto" class="custom-file-input" >
+                            <input type="file" class="custom-file-input" >
                             <label class="custom-file-label" for="foto">Choose file</label>
                           </div>
                           <div class="input-group-append">
