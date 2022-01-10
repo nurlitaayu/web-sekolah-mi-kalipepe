@@ -22,6 +22,7 @@ class Dataguru extends CI_Controller {
         $config['max_width']            = 10000000;
         $config['max_height']           = 10000000;
 
+<<<<<<< HEAD
         $this->load->library('upload', $config);
         $this->upload->initialize($config);  
 
@@ -67,6 +68,8 @@ class Dataguru extends CI_Controller {
 
     }
 =======
+=======
+>>>>>>> parent of 50b9af8 (#crud data guru)
 	public function tambah(){
 		$data['title']='siswa';
 		
