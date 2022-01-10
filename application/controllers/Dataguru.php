@@ -24,6 +24,7 @@ class Dataguru extends CI_Controller {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->load->library('upload', $config);
         $this->upload->initialize($config);  
 
@@ -69,6 +70,8 @@ class Dataguru extends CI_Controller {
 
     }
 =======
+=======
+>>>>>>> parent of 50b9af8 (#crud data guru)
 =======
 >>>>>>> parent of 50b9af8 (#crud data guru)
 =======
