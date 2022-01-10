@@ -78,7 +78,7 @@
                     <td><?= $ssw->tgl_lahir ?></td>
                     <td><?= $ssw->id_jabatan ?></td>
                     <td><?= $ssw->pendidikan ?></td>
-                    <td><img src="<?php echo base_url().'/foto/fotoguru/'.$ssw->foto_guru ?>"></td>
+                    <td><img src="<?php echo base_url().'assets/foto/fotoguru/'.$ssw->foto_guru ?>" width="100"></td>
                     <td>
                       <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-guru"><i class="fas fa-edit" style="color: #fff;"></i></button>
                       <!-- <button class="btn btn-sm btn-warning"><i class="fas fa-edit" style="color: #fff;"></i></button> -->
@@ -137,9 +137,9 @@
               </div>
               <div class="form-group">
                 <label>Tanggal Lahir</label>
-                <div class="input-group date" id="reservationdate2" data-target-input="nearest">
-                  <input type="text" name="tgl_lahir" class="form-control datetimepicker-input" data-target="#reservationdate2"/>
-                  <div class="input-group-append" data-target="#reservationdate2" data-toggle="datetimepicker">
+                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                  <input type="text" name="tgl_lahir" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                  <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                       <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                   </div>
                 </div>
@@ -179,13 +179,12 @@
 <!-- /.modal tambah guru -->
 
 <?php $this->load->view('template/footer.php'); ?>
-<script type="text/javascript">
-   $('#reservationdate').datetimepicker({
-        format: 'Y-m-D'
+<script>
+      //Date picker
+    $('#reservationdate').datetimepicker({
+        format: 'YYYY-MM-DD'
     });
-   $('#reservationdate2').datetimepicker({
-        format: 'L'
-    });
+
 </script>
  
 </body>
