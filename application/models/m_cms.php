@@ -24,7 +24,10 @@ class M_cms extends CI_Model{
 			return $query->row();
 		}
 	}
-	public function delete_kategori($id)	{
+	public function save_kategori($data){
+		return $this->db->update('tb_kategori', $data, array('id_kategori' => $data['id_kategori']));
+	}
+	public function delete_kategori($id){
 		return $this->db->delete('tb_kategori', array('id_kategori' => $id));
 	}
 }

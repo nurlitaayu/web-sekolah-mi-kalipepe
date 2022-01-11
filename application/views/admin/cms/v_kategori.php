@@ -95,7 +95,7 @@
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default swalDefaultSuccess" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
+        <button type="button" class="btn btn-primary" id="btnSave">Tambah</button>
       </div>
     </div>
     <!-- /.modal-content -->
@@ -125,7 +125,7 @@
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default swalDefaultSuccess" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="updateK">Update</button>
+        <button type="button" class="btn btn-primary" id="btnEdit">Update</button>
       </div>
     </div>
     <!-- /.modal-content -->
@@ -137,7 +137,6 @@
 
 
 <?php $this->load->view('template/footer') ?>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Create Data Ajax -->
 <script>
@@ -193,7 +192,7 @@
   }
   read_kategori();
 
-  //Update Kategori
+  //Update Kategori Get
   $(document).on("click", "#edit", function(e){
     e.preventDefault();
 
@@ -211,11 +210,39 @@
         },
         success: function(data){
           if (data.responce == "success") {
-              $('edit_modal').modal('show');
-              $('edit_modal_id').val(data.post.id);
-              $('kategori_edit').val(data.post.kategori);
+              $('#edit_modal').modal('show');
+              $('#edit_modal_id').val(data.post.id_kategori);
+              $('#kategori_edit').val(data.post.kategori);
           }else{
             alert("Error");
+          }
+        }
+      });
+    }
+  });
+  //Update Kategori Simpan
+  $(document).on("click", "#btnEdit", function(e){
+    e.preventDefault();
+
+    var edit_id = $("#edit_modal_id").val();
+    var kategori_edit = $("#kategori_edit").val();
+
+    if (edit_id == "" || kategori_edit == "") {
+      alert("Semua kolom harus di isi!!");
+    }else{
+      $.ajax({
+        url: "<?php echo base_url('cms/simpan_data') ?>",
+        type: "post",
+        dataType: "json",
+        data:{
+          edit_id: edit_id,
+          kategori_edit: kategori_edit
+        },
+        success: function(data){
+          read_kategori();
+          if (data.responce == "success") {
+            $('#edit_modal').modal('hide');
+            alert("Data berhasil diedit");
           }
         }
       });

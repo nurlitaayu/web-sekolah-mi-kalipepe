@@ -45,7 +45,7 @@ class Cms extends CI_Controller {
 			echo json_encode($posts);
 		}
 	}
-	//Read Controller Kategori
+	//Get Data Update Controller Kategori
 	public function edit_kategori(){
 		if ($this->input->is_ajax_request()) {
 			$edit_id = $this->input->post("edit_id");
@@ -57,6 +57,26 @@ class Cms extends CI_Controller {
 			}
 			echo json_encode($data);
 		}
+	}
+	//Simpan Data Update
+	public function simpan_data(){
+		if ($this->input->is_ajax_request()){
+			$this->form_validation->set_rules('kategori_edit', 'Kategori', 'required');
+			if($this->form_validation->run() == FALSE){
+				$data = array('responce' => 'error', 'message' => validation_errors());
+			}else{
+				$data['id_kategori'] = $this->input->post('edit_id');
+				$data['kategori'] = $this->input->post('kategori_edit');
+				if ($this->m_cms->save_kategori($data)) {
+					$data = array('responce' => 'success', 'message' => 'Kategori berhasil diupdate!');
+				}else{
+					$data = array('responce' => 'error', 'message' => 'Error bosku!');
+				}
+			}
+			echo json_encode($data);
+		}else{
+			echo "no ajacasd";
+		}		
 	}
 	//Delete Controller Kategori
 	public function hapus_kategori(){
