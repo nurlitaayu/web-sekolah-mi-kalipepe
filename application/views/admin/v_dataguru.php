@@ -81,8 +81,8 @@
                     <td><img src="<?php echo base_url().'assets/foto/fotoguru/'.$ssw->foto_guru ?>" width="100"></td>
                     <td>
                       <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-guru"><i class="fas fa-edit" style="color: #fff;"></i></button>
-                      <!-- <button class="btn btn-sm btn-warning"><i class="fas fa-edit" style="color: #fff;"></i></button> -->
-                      <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                      
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Dataguru/hapus_guru/<?= $ssw->id_guru ?>/<?=$ssw->foto_guru ?>" ><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                 </tbody>
@@ -115,7 +115,7 @@
             <div class="col-sm-6">
               <div class="form-group">
                 <label>Nama</label>
-                <input type="text" name="nama_guru" class="form-control">
+                <input type="text" name="nama_guru" class="form-control" required>
               </div>
               <div class="form-group">
                 <label>Tempat Lahir</label>
@@ -133,12 +133,12 @@
             <div class="col-sm-6">
               <div class="form-group">
                 <label>Nip</label>
-                <input type="text" name="nip" class="form-control">
+                <input type="text" name="nip" class="form-control" required>
               </div>
               <div class="form-group">
                 <label>Tanggal Lahir</label>
                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                  <input type="text" name="tgl_lahir" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                  <input type="text" name="tgl_lahir" class="form-control datetimepicker-input" data-target="#reservationdate" required >
                   <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                       <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                   </div>
@@ -158,8 +158,8 @@
             <div class="col-sm-9">
               <div class="input-group">
                   <div class="custom-file">
-                    <input type="file" name="foto_guru" class="custom-file-input" >
-                    <label class="custom-file-label" for="foto">Choose file</label>
+                    <input type="file" name="foto_guru" class="custom-file-input" required>
+                    <label class="custom-file-label" for="foto">choose file</label>
                   </div>
                 </div>
             </div>

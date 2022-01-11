@@ -54,11 +54,10 @@ class Dataguru extends CI_Controller {
             redirect('dataguru');
         }
     }
-    public function hapus_guru(){
-        // $where = array ('id_guru' => $id);
+    public function hapus_guru($id,$foto){
 
-        $id_guru = $this->input->post('id_guru');
-        $foto_guru = $this->input->post('foto_guru');
+        $id_guru = $id;
+        $foto_guru = $foto;
         
         $this->m_guru->delete_guru($id_guru, $foto_guru);
 
