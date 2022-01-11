@@ -17,7 +17,7 @@ class Dataguru extends CI_Controller {
 	}
 	public function tambah_guru(){
 		$config['upload_path']          = './assets/foto/fotoguru';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['max_size']             = 10000000;
         $config['max_width']            = 10000000;
         $config['max_height']           = 10000000;
@@ -63,6 +63,80 @@ class Dataguru extends CI_Controller {
 
         redirect ('dataguru');
 
+    }
+
+    public function edit_guru(){
+
+        $id= $this->input->post('id');
+        $config['upload_path']          = './assets/foto/fotoguru';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 10000000;
+        $config['max_width']            = 10000000;
+        $config['max_height']           = 10000000;
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);  
+
+        if ( ! $this->upload->do_upload('foto_guru')){
+            
+            $nama_guru 		= $this->input->post('nama_guru', TRUE);
+            $nip 			= $this->input->post('nip', TRUE);
+            $tempat_lahir 	= $this->input->post('tempat_lahir', TRUE);
+            $tgl_lahir 		= $this->input->post('tgl_lahir', TRUE);
+            $id_jabatan 	= $this->input->post('id_jabatan', TRUE);
+            $pendidikan 	= $this->input->post('pendidikan', TRUE);
+            $data = array(
+            	'nama_guru' => $nama_guru,
+            	'nip' => $nip,
+            	'tempat_lahir' => $tempat_lahir,
+            	'tgl_lahir' => $tgl_lahir,
+            	'id_jabatan' => $id_jabatan,
+            	'pendidikan' => $pendidikan,
+            	
+            );
+            $this->db->where('id_guru',$id);
+            $this->db->update('tb_guru', $data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            	Data Berhasil Disimpan!</div>');
+            redirect('dataguru');
+            
+        }else{
+            $foto_guru 		= $this->upload->data();
+            $foto_guru 		= $foto_guru['file_name'];
+            $nama_guru 		= $this->input->post('nama_guru', TRUE);
+            $nip 			= $this->input->post('nip', TRUE);
+            $tempat_lahir 	= $this->input->post('tempat_lahir', TRUE);
+            $tgl_lahir 		= $this->input->post('tgl_lahir', TRUE);
+            $id_jabatan 	= $this->input->post('id_jabatan', TRUE);
+            $pendidikan 	= $this->input->post('pendidikan', TRUE);
+
+            $data = array(
+            	'nama_guru' => $nama_guru,
+            	'nip' => $nip,
+            	'tempat_lahir' => $tempat_lahir,
+            	'tgl_lahir' => $tgl_lahir,
+            	'id_jabatan' => $id_jabatan,
+            	'pendidikan' => $pendidikan,
+            	'foto_guru' => $foto_guru
+            );
+            $this->db->where('id_guru',$id);
+            
+            $this->db->update('tb_guru', $data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            	Data Berhasil Disimpan!</div>');
+            redirect('dataguru');
+        }
+       
+        // $data['tb_guru']=$this->m_guru->ambil_guru($id);
+
+    //     $id_guru = $id;
+    //     $foto_guru = $foto;
+        
+    //     $this->m_guru->update_guru($id_guru,$foto_guru);
+    //     $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+    //     Data Berhasil Di Rubah!
+    //     </div>');
+    // redirect('dataguru');
     }
 }
         

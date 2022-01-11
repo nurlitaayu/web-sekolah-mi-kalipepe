@@ -56,6 +56,7 @@
               <table class="table table-head-fixed text-nowrap table-bordered table-hover">
                 <thead>
                   <tr>
+                    <th>No</th>
                     <th>ID</th>
                     <th>Nama</th>
                     <th>Nip</th>
@@ -72,6 +73,7 @@
                 <tbody>
                   <tr>
                     <td><?= $no++ ?></td>
+                    <td><?= $ssw->id_guru ?></td>
                     <td><?= $ssw->nama_guru ?></td>
                     <td><?= $ssw->nip ?></td>
                     <td><?= $ssw->tempat_lahir ?></td>
@@ -80,9 +82,10 @@
                     <td><?= $ssw->pendidikan ?></td>
                     <td><img src="<?php echo base_url().'assets/foto/fotoguru/'.$ssw->foto_guru ?>" width="100"></td>
                     <td>
-                      <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-guru"><i class="fas fa-edit" style="color: #fff;"></i></button>
-                      
-                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Dataguru/hapus_guru/<?= $ssw->id_guru ?>/<?=$ssw->foto_guru ?>" ><i class="fas fa-trash"></i></a>
+                      <!-- button edit -->
+                      <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-guru<?php echo $ssw->id_guru; ?>" ><i class="fas fa-edit" style="color: #fff;"></i></button>
+                      <!-- button delete -->
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Dataguru/hapus_guru/<?= $ssw->id_guru; ?>/<?=$ssw->foto_guru ?>" ><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                 </tbody>
@@ -177,6 +180,100 @@
 <!-- /.modal-dialog -->
 </div>
 <!-- /.modal tambah guru -->
+
+
+<!-- modal edit guru -->
+<!--  -->
+<?php $no = 1;
+foreach($guru as $ssw) : $no++;?>
+<div class="modal fade" id="edit-guru<?php echo $ssw->id_guru; ?>">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Guru</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php echo form_open_multipart('dataguru/edit_guru'); ?>
+        <input type="hidden" name="id" value="<?php echo $ssw->id_guru;?>">
+
+        <form>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Nama</label>
+                <input type="text" name="nama_guru" class="form-control" value="<?php echo $ssw->nama_guru;?>" required>
+              </div>
+              <div class="form-group">
+                <label>Tempat Lahir</label>
+                <input type="text" name="tempat_lahir" class="form-control" value="<?php echo $ssw->tempat_lahir;?>">
+              </div>
+              <div class="form-group">
+                <label>Jabatan</label>
+                <select name="id_jabatan" type="text" class="custom-select" value="<?php echo $ssw->jabatan;?>">
+                  <?php foreach($jabatan as $j): ?>
+                  <option value="<?= $j->id_jabatan ?>"><?php echo $j->posisi_jabatan ?></option>
+                  <?php endforeach ?>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Nip</label>
+                <input type="text" name="nip" class="form-control" value="<?php echo $ssw->nip;?>" required>
+              </div>
+              <div class="form-group">
+                <label>Tanggal Lahir</label>
+                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                  <input type="text" name="tgl_lahir" class="form-control datetimepicker-input" data-target="#reservationdate" value="<?php echo $ssw->tgl_lahir;?>" required >
+                  <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Pendidikan</label>
+                <input type="text" name="pendidikan" class="form-control" value="<?php echo $ssw->pendidikan;?>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <label for="exampleInputFile">Foto</label>
+              <img src="">
+            </div>
+            <div class="col-sm-9">
+              <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" name="foto_guru" class="custom-file-input" required>
+                    <label class="custom-file-label" for="foto">choose file</label>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+                <label>Gambar</label>
+                
+              </div>
+              <img src="<?php echo base_url().'assets/foto/fotoguru/'.$ssw->foto_guru  ?>" width="70">
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" >Save changes</button>
+        <?php echo form_close();?>
+      </div>
+  </div>
+  </form>
+  <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<?php endforeach;?>
+
+<!-- /.modal Edit guru -->
+
 
 <?php $this->load->view('template/footer.php'); ?>
 <script>

@@ -22,6 +22,12 @@ class M_guru extends CI_Model {
         $this->db->delete('tb_guru', array('id_guru' => $id_guru));
         unlink(FCPATH."/foto/fotoguru/".$foto_guru);
     }
+    public function update_guru($id_guru,$foto_guru){
+        $this->db->where('id_guru',$id_guru);
+        $this->db->update('tb_guru', array('id_guru' => $id_guru));
+        unlink(FCPATH."/foto/fotoguru/".$foto_guru);
+    }
+
     
 
 }
