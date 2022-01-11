@@ -75,11 +75,12 @@
   </div>
   <!-- /.content-wrapper -->
 
+<!-- Modal Tambah -->
 <div class="modal fade" id="modal_form">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Default Modal</h4>
+        <h4 class="modal-title">Tambah Kategori</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -101,9 +102,41 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->
+<!-- End Modal Tambah -->
 
-<script src="<?php echo base_url('assets/main/vendor/jquery/jquery-2.1.4.min.js')?>"></script>
+<!-- Modal Edit -->
+<div class="modal fade" id="edit_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Kategori</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="edit_form" method="post" action="#">
+          <input type="hidden" id="edit_modal_id" value="">
+          <div class="form-group">
+            <label>Nama Kategori</label>
+            <input type="text" id="kategori_edit" class="form-control" placeholder="Masukan kategori baru">
+          </div>  
+        </form>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default swalDefaultSuccess" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="updateK">Update</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- End Modal Edit -->
+
+
+
+<?php $this->load->view('template/footer') ?>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Create Data Ajax -->
@@ -177,7 +210,13 @@
           edit_id: edit_id
         },
         success: function(data){
-          console.log(data);
+          if (data.responce == "success") {
+              $('edit_modal').modal('show');
+              $('edit_modal_id').val(data.post.id);
+              $('kategori_edit').val(data.post.kategori);
+          }else{
+            alert("Error");
+          }
         }
       });
     }
@@ -243,6 +282,6 @@
   })
 </script>
 
-<?php $this->load->view('template/footer') ?>
+
 </body>
 </html>
