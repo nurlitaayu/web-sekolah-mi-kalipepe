@@ -6,6 +6,26 @@ class M_cms extends CI_Model{
 		$this->load->database();
 	}
 
+
+//model Post
+	public function add_post($data,$table){
+        $this->db->insert($table,$data);
+        $this->db->insert('tb_post', $data);
+    }
+    public function read_post($value=''){
+    	$this->db->select('*');
+        $this->db->from('tb_post');
+        $query = $this->db->get();
+        return $query->result();
+    }
+//End model Post
+
+
+	public function d_kategori(){
+        return $this->db->get('tb_kategori');
+    }
+
+//model Kategori
 	function tambah_kategori($data){
 		return $this->db->insert('tb_kategori', $data);
 	}
@@ -31,5 +51,6 @@ class M_cms extends CI_Model{
 		return $this->db->delete('tb_kategori', array('id_kategori' => $id));
 	}
 }
+//end model Kategori
 
  ?>

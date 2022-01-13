@@ -9,13 +9,58 @@ class Cms extends CI_Controller {
 		$this->load->model('m_cms');
 	}
 
+//Kategori Post
+	//Read Post
 	public function index()	{
-		$this->load->view('admin/cms/v_listpost');
+		$data['post'] = $this->m_cms->read_post();
+		$data['kategori'] = $this->m_cms->d_kategori()->result();
+		$this->load->view('admin/cms/v_listpost',$data);
 	}
+	//Create Post
+	public function tambah_post(){
+		$config['upload_path']          = './assets/foto/fotopost';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 10000000;
+        $config['max_width']            = 10000000;
+        $config['max_height']           = 10000000;
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);  
+
+        if ( ! $this->upload->do_upload('foto_post')){
+            
+            print_r($this->upload->display_errors());
+            die;
+        }else{
+            $foto_post 		= $this->upload->data();
+            $foto_post 		= $foto_post['file_name'];
+            $judul_post 	= $this->input->post('judul_post', TRUE);
+            $isi_post 		= $this->input->post('isi_post', TRUE);
+            $id_kategori 	= $this->input->post('id_kategori', TRUE);
+            $tanggal_post 	= $this->input->post('tanggal_post', TRUE);
+
+            $data = array(
+            	'judul_post' => $judul_post,
+            	'isi_post' => $isi_post,
+            	'tanggal_post' => $tanggal_post,
+            	'id_kategori' => $id_kategori,
+            	'foto_post' => $foto_post
+            );
+            $this->db->insert('tb_post', $data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            	Data Berhasil Disimpan!</div>');
+            redirect('cms');
+        }
+    }
+//End Kategori Post
+
+//Kategori Page
 	public function pages() {
 		$this->load->view('admin/cms/v_page');
 	}
+//End Kategori Page
 
+//Kategori Kontroller
 	public function kategori() {
 		$this->load->view('admin/cms/v_kategori');
 	}
@@ -91,5 +136,6 @@ class Cms extends CI_Controller {
 		}
 		echo json_encode($data);
 	}
+//End Kategori Controller
 
 }

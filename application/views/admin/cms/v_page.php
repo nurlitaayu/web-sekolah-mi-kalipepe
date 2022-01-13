@@ -125,7 +125,6 @@
             </div>
           </div>
           <!-- /.card-body -->
-
           <div class="card-footer">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
@@ -135,6 +134,7 @@
       <!-- /.modal-dialog -->
    </div>
   </div>
+</div>
 </div>
 <!-- /.modal -->
 <script type="text/javascript" src="<?php echo base_url('assets/main/vendor/ckeditor/ckeditor.js') ?>"></script>
