@@ -21,8 +21,11 @@ class m_jabatan extends CI_Model {
     }
 
 
-    public function save($table,$data){
-        return $this->db->insert($table, $data);
+    public function add_jabatan(){
+        $data=[
+            "posisi_jabatan"=> $this->input->post('posisi_jabatan')
+        ];
+        $this->db->insert('tb_jabatan', $data);
     }
 
 

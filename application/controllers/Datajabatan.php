@@ -19,11 +19,10 @@ class DataJabatan extends CI_Controller {
 	}
 
 	public function simpan(){
-		$posisi_jabatan = $this->input->post('posisi_jabatan');
-		$data = array(
-			'posisi_jabatan' => $posisi_jabatan
-		);
-		return $this->m_jabatan->save('tb_jabatan', $data);
+	
+		$this->m_jabatan->add_jabatan();
+		redirect('datajabatan');
+		
 	}
 
 	public function delete(){
