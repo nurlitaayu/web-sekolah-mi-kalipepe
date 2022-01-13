@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta id="viewport" content="width=device-width, initial-scale=1">
-  <title>Mi Muhammadiyah Kalipepe | Data Guru</title>
+  <title>Mi Muhammadiyah Kalipepe | Data Jabatan</title>
 	<?php $this->load->view('template/head.php'); ?>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -19,7 +19,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Guru</h1>
+            <h1 class="m-0">Data Jabatan</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -85,6 +85,7 @@
     </div>
     <!-- /.content -->
   </div>
+  <?php $this->load->view('template/footer.php'); ?>
   <!-- /.content-wrapper -->
       <div class="modal fade" id="tambah-guru">
         <div class="modal-dialog modal-lg">
@@ -98,19 +99,20 @@
               </button>
             </div>
             <div class="modal-body">
+            <?php echo form_open_multipart('datajabatan/simpan'); ?>
               <form id="myForm">
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Posisi Jabatan</label>
-                      <input type="text" id="posisi_jabatan" nama="posisi_jabatan" class="form-control">                                      
+                      <input type="text" name="posisi_jabatan" class="form-control">                                      
                     </div>                
                 <!-- </form> -->
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="tombolsimpan">Save changes</button>
-             
+              <button type="submit" class="btn btn-primary" id="tombolsimpan">Save changes</button>
+              <?php echo form_close();?>
             </div>
             
           </div>
@@ -120,8 +122,8 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
-<?php $this->load->view('template/footer.php'); ?>
-  <script>
+
+  <!-- <script>
    function delete_data(id){
     alert('sadfasdf');
      $.ajax({
@@ -150,6 +152,6 @@
   });
 
 
-  </script>
+  </script> -->
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>MI MUHAMMADIYAH KALIPEPE</title>
   <link rel="stylesheet" type="text/css" href="assets/main/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="assets/main/style.css">
 
@@ -203,7 +203,7 @@
       </div>
     </div> 
     <div class="more-button">
-      <a href="" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
+      <a href="<?php echo base_url('tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
     </div>  
   </div>
 </section>
@@ -312,7 +312,7 @@
         </div>
       </div>
     </div>
-    <ul class="sosmed">
+    <ul class="sosmed" >
       <li><a href=""> <i class="fab fa-facebook-f"></i></a></li>
       <li><a href=""> <i class="fab fa-instagram"></i></a></li>
       <li><a href=""> <i class="fab fa-youtube"></i></a></li>

@@ -21,11 +21,18 @@ class Datamapel extends CI_Controller {
 		$this->load->view('admin/v_mapel',$data,FALSE);
 	}
 
+
 	public function simpan(){
-		$mata_pelajaran = $this->input->post('mata_pelajaran');
-		$data = array(
-			'mata_pelajaran' => $mata_pelajaran
-		);
-		return $this->m_mapel->save('tb_mapel', $data);
+	
+		$this->m_mapel->add_mapel();
+		redirect('datamapel');
+		
 	}
+	public function hapus_mapel($id){
+
+        
+        $this->m_mapel->delete_mapel($id);
+        redirect ('datamapel');
+
+    }
 }
