@@ -23,7 +23,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('dashboard'); ?>">cm</a></li>
               <li class="breadcrumb-item active">Data Guru</li>
             </ol>
           </div><!-- /.col -->
@@ -51,8 +51,10 @@
                 </div>
               </div>
             </div>
+            
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0 text-center" style="height: 300px;">
+            <!-- <?= $this->session->flashdata('pesan');?> -->
               <table class="table table-head-fixed text-nowrap table-bordered table-hover">
                 <thead>
                   <tr>
@@ -247,7 +249,7 @@ foreach($guru as $ssw) : $no++;?>
             <div class="col-sm-9">
               <div class="input-group">
                   <div class="custom-file">
-                    <input type="file" name="foto_guru" class="custom-file-input" required>
+                    <input type="file" name="foto_guru" class="custom-file-input" >
                     <label class="custom-file-label" for="foto">choose file</label>
                   </div>
                 </div>

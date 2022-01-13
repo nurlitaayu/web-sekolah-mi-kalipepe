@@ -312,7 +312,7 @@
         </div>
       </div>
     </div>
-    <ul class="sosmed">
+    <ul class="sosmed" >
       <li><a href=""> <i class="fab fa-facebook-f"></i></a></li>
       <li><a href=""> <i class="fab fa-instagram"></i></a></li>
       <li><a href=""> <i class="fab fa-youtube"></i></a></li>

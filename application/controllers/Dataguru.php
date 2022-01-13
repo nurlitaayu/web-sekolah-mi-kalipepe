@@ -30,27 +30,10 @@ class Dataguru extends CI_Controller {
             print_r($this->upload->display_errors());
             die;
         }else{
-            $foto_guru 		= $this->upload->data();
-            $foto_guru 		= $foto_guru['file_name'];
-            $nama_guru 		= $this->input->post('nama_guru', TRUE);
-            $nip 			= $this->input->post('nip', TRUE);
-            $tempat_lahir 	= $this->input->post('tempat_lahir', TRUE);
-            $tgl_lahir 		= $this->input->post('tgl_lahir', TRUE);
-            $id_jabatan 	= $this->input->post('id_jabatan', TRUE);
-            $pendidikan 	= $this->input->post('pendidikan', TRUE);
-
-            $data = array(
-            	'nama_guru' => $nama_guru,
-            	'nip' => $nip,
-            	'tempat_lahir' => $tempat_lahir,
-            	'tgl_lahir' => $tgl_lahir,
-            	'id_jabatan' => $id_jabatan,
-            	'pendidikan' => $pendidikan,
-            	'foto_guru' => $foto_guru
-            );
-            $this->db->insert('tb_guru', $data);
+           $this->m_guru->add_guru();
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
-            	Data Berhasil Disimpan!</div>');
+            berhasil di simpan
+          </div>');
             redirect('dataguru');
         }
     }
@@ -79,51 +62,17 @@ class Dataguru extends CI_Controller {
 
         if ( ! $this->upload->do_upload('foto_guru')){
             
-            $nama_guru 		= $this->input->post('nama_guru', TRUE);
-            $nip 			= $this->input->post('nip', TRUE);
-            $tempat_lahir 	= $this->input->post('tempat_lahir', TRUE);
-            $tgl_lahir 		= $this->input->post('tgl_lahir', TRUE);
-            $id_jabatan 	= $this->input->post('id_jabatan', TRUE);
-            $pendidikan 	= $this->input->post('pendidikan', TRUE);
-            $data = array(
-            	'nama_guru' => $nama_guru,
-            	'nip' => $nip,
-            	'tempat_lahir' => $tempat_lahir,
-            	'tgl_lahir' => $tgl_lahir,
-            	'id_jabatan' => $id_jabatan,
-            	'pendidikan' => $pendidikan,
-            	
-            );
-            $this->db->where('id_guru',$id);
-            $this->db->update('tb_guru', $data);
+            $this->m_guru->edit_guru_tanpafoto($id);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
-            	Data Berhasil Disimpan!</div>');
+            berhasil di simpan
+          </div>');
             redirect('dataguru');
             
         }else{
-            $foto_guru 		= $this->upload->data();
-            $foto_guru 		= $foto_guru['file_name'];
-            $nama_guru 		= $this->input->post('nama_guru', TRUE);
-            $nip 			= $this->input->post('nip', TRUE);
-            $tempat_lahir 	= $this->input->post('tempat_lahir', TRUE);
-            $tgl_lahir 		= $this->input->post('tgl_lahir', TRUE);
-            $id_jabatan 	= $this->input->post('id_jabatan', TRUE);
-            $pendidikan 	= $this->input->post('pendidikan', TRUE);
-
-            $data = array(
-            	'nama_guru' => $nama_guru,
-            	'nip' => $nip,
-            	'tempat_lahir' => $tempat_lahir,
-            	'tgl_lahir' => $tgl_lahir,
-            	'id_jabatan' => $id_jabatan,
-            	'pendidikan' => $pendidikan,
-            	'foto_guru' => $foto_guru
-            );
-            $this->db->where('id_guru',$id);
-            
-            $this->db->update('tb_guru', $data);
+           $this->m_guru->edit_guru($id);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
-            	Data Berhasil Disimpan!</div>');
+            berhasil di simpan
+          </div>');
             redirect('dataguru');
         }
        

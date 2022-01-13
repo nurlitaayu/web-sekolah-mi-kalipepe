@@ -56,7 +56,7 @@
               <table class="table table-head-fixed text-nowrap table-bordered table-hover">
                 <thead>
                   <tr>
-                    <th>ID</th>
+                    <th>No</th>
                     <th>Mata Pelajaran</th>
                     <th>Aksi</th>
                   </tr>
@@ -69,7 +69,7 @@
                     <td><?= $ssw->mata_pelajaran ?></td>
                     <td>
                       <button class="btn btn-sm btn-warning"><i class="fas fa-edit" style="color: #fff;"></i></button>
-                      <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Datamapel/hapus_mapel/<?= $ssw->id_mapel; ?>" ><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                 </tbody>
@@ -84,6 +84,7 @@
     </div>
     <!-- /.content -->
   </div>
+  <?php $this->load->view('template/footer.php'); ?>
   <!-- /.content-wrapper -->
       <div class="modal fade" id="tambah-mapel">
         <div class="modal-dialog modal-lg">
@@ -97,20 +98,21 @@
               </button>
             </div>
             <div class="modal-body">
+            <?php echo form_open_multipart('datamapel/simpan'); ?>
               <form>
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Mata Pelajaran</label>
-                      <input type="text" id="nama_mapel" class="form-control">
+                      <input type="text" name="mata_pelajaran" class="form-control">
                                        
                     </div>
                 <!-- </form> -->
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="tombolsimpan">Save changes</button>
-             
+              <button type="submit" class="btn btn-primary" id="tombolsimpan">Save changes</button>
+              <?php echo form_close();?>
             </div>
             
           </div>
@@ -120,13 +122,15 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
-<?php $this->load->view('template/footer.php'); ?>
-<script type="text/javascript">
+
+<!-- <script type="text/javascript">
    $('#reservationdate').datetimepicker({
         format: 'L'
     });
-</script>
-  <script>
+</script> -->
+
+
+  <!-- <script>
   $('#tombolsimpan').on('click',function(){
     var $nama =$('#mata_pelajaran').val();
     $.ajax({
@@ -137,6 +141,6 @@
       }
     });
   });
-  </script>
+  </script> -->
 </body>
 </html>
