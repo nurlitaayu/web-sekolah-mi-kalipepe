@@ -142,30 +142,17 @@
         <h2>Prestasi</h2>
       </div>
         <div class="card-group">
+          <?php foreach ($prestasi as $pres) { 
+          ?>
           <div class="card">
-            <img src="https://gkdi.org/blog/wp-content/uploads/2019/08/prestasi.jpg" class="card-img-top card-picture" alt="...">
+            <img src="<?php echo base_url().'assets/foto/fotopost/'.$pres->foto_post ?>"class="card-img-top card-picture" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <h5 class="card-title"><?php echo $pres->judul_post ?></h5>
+              <p class="card-text"><?php echo $pres->isi_post ?></p>
+              <p class="card-text"><small class="text-muted"><?php echo $pres->tanggal_post ?></small></p>
             </div>
           </div>
-          <div class="card">
-            <img src="https://statics.indozone.id/content/2021/08/03/5jsYq18/raih-5-medali-di-olimpiade-tokyo-prestasi-indonesia-meningkat-dari-rio-201634_700.jpg" class="card-img-top card-picture" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVG1gPbGr73UwvVNZzlA7jtoeEQS86a-B92w&usqp=CAU" class="card-img-top card-picture" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+          <?php } ?>
         </div>
       <div class="more-button">
         <a href="" class="btn btn-more" type="button">Lihat Prestasi Lain</a>
@@ -180,27 +167,15 @@
       <h2>Tenaga Pendidik</h2>
     </div>
     <div class="row">
+      <?php foreach ($guru as $g) { ?>
       <div class="col-md-4">
         <div class="teacher">
-          <img src="https://s3-ap-southeast-1.amazonaws.com/guruberbagi-real/production/cover/medium/176228-1604494329.jpeg" class="teacher-img">
-          <h1>NAMA GURU</h1>
-          <p>Jabatan Guru</p>
+          <img src="<?php echo base_url().'assets/foto/fotoguru/'.$g->foto_guru ?>" class="teacher-img" alt="...">
+          <h1><?php echo $g->nama_guru ?></h1>
+          <p><?php echo $g->posisi_jabatan ?></p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="teacher">
-          <img src="https://mmc.tirto.id/image/otf/500x0/2020/11/24/istock-839037320_ratio-16x9.jpg" class="teacher-img">
-          <h1>NAMA GURU</h1>
-          <p>Jabatan Guru</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="teacher">
-          <img src="https://1.bp.blogspot.com/-oYYDeemWD3k/YTw4-ObawKI/AAAAAAAAMdo/2L-4oKHi9WghwT5lWuhWYcu_cPO70jjBACNcBGAsYHQ/s960/Emis%2BTambah%2BGTK%2BBaru.jpg" class="teacher-img">
-          <h1>NAMA GURU</h1>
-          <p>Jabatan Guru</p>
-        </div>
-      </div>
+      <?php } ?>
     </div> 
     <div class="more-button">
       <a href="<?php echo base_url('tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
@@ -268,8 +243,27 @@
     <div class="section-title">
       <h2>Berita</h2>
     </div>
-    <div class="row">
-    
+    <?php foreach ($berita as $news): ?>
+    <div class="card mb-3" style="max-width: 1080px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="<?php echo base_url().'assets/foto/fotopost/'.$news->foto_post ?>" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><strong><?php echo $news->judul_post ?></strong></h5>
+            <p class="card-text">
+              <?php echo substr($news->isi_post,0,250) ?>
+              <a href="">Baca Selengkapnya</a>    
+            </p>
+            <p class="card-text"><small class="text-muted"><?php echo $news->tanggal_post ?></small></p>
+          </div>
+        </div>
+      </div>
+    </div>      
+    <?php endforeach ?>
+    <div class="more-button">
+      <a href="" class="btn btn-more" type="button">Lihat Berita Lain</a>
     </div>
   </div>
 </section>

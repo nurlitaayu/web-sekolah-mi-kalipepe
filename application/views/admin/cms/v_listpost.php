@@ -70,7 +70,7 @@
                 <tbody>
                   <tr>
                     <td><?php echo $no++ ?></td>
-                    <td><?php echo $p->id_kategori ?></td>
+                    <td><?php echo $p->kategori ?></td>
                     <td><?php echo $p->judul_post ?></td>
                     <td><?php echo $p->isi_post ?></td>
                     <td><?php echo $p->tanggal_post ?></td>
