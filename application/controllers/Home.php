@@ -2,24 +2,19 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('main_model','', TRUE);
+		$this->load->library('pagination');	
+		$this->load->helper('url');			
+	}
 
 	public function index()	{
-		$this->load->view('main');
+		// $data['prestasi'] = $this->main_model->read_post()->result();
+		$data['prestasi'] = $this->main_model->getPost(3);
+		$sql = 'SELECT id_kategori FROM tb_post WHERE ready = "1" ';
+		
+		$this->load->view('main',$data, $sql);
 	}
 	
-	// public function proses_tambahdata(){
-	// 	$this->m_guru->proses_tambahdata();
-	// 	$this->session->set_flashdata('pesan','<div
-	// 		class="alert alert-success" role="alert">
-	// 		Data baru berhasil ditambahkan! </div>');
-	// 	redirect('v_dataguru');
-	// }
-	// public function proses_editdata(){
-	// 	$this->m_guru->edit_guru();
-	// 	$this->session->set_flashdata('pesan','<div
-	// 		class="alert alert-success" role="alert">
-	// 		Data baru berhasil ditambahkan! </div>');
-	// 	redirect('v_dataguru');
-	// }
-
 }
