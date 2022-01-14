@@ -16,6 +16,7 @@ class M_cms extends CI_Model{
     	$this->db->select('*');
         $this->db->from('tb_post');
         $this->db->join('tb_kategori', 'tb_kategori.id_kategori=tb_post.id_kategori');
+        $this->db->order_by("id_post", "desc");
         $query = $this->db->get();
         return $query->result();
     }
