@@ -123,6 +123,39 @@
       </div>
       <!-- /.modal -->
 
+<!-- modal edit mapel -->
+<!--  -->
+<?php $no = 1;
+foreach($mapel as $ssw) : $no++;?>
+<div class="modal fade" id="edit-mapel<?php echo $ssw->id_mapel; ?>">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Mata Pelajaran</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php echo form_open_multipart('datamapel/edit_mapel'); ?>
+        <input type="hidden" name="id" value="<?php echo $ssw->id_mapel;?>">
+
+        <form>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Mata Pelajaran</label>
+                <input type="text" name="mata_pelajaran" class="form-control" value="<?php echo $ssw->mata_pelajaran;?>" required>
+              </div>
+  </form>
+  <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<?php endforeach;?>
+
+<!-- /.modal Edit guru -->
+
 <!-- <script type="text/javascript">
    $('#reservationdate').datetimepicker({
         format: 'L'
