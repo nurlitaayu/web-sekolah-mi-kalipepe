@@ -29,11 +29,10 @@ class m_mapel extends CI_Model {
         $this->db->insert('tb_mapel', $data);
     }
 
-    public function update($table,$id,$data){        
-        $this->db->where('id_mapel', $id);
-        $this->db->update($table, $data);
-
-    }
+    public function edit_mapel($id,$data){
+        $this->db->where('id_mapel',$id);
+        $this->db->update('tb_mapel', $data);
+}
 
     public function delete_mapel($id){
         
