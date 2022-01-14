@@ -178,7 +178,9 @@
       <?php } ?>
     </div> 
     <div class="more-button">
+      <!-- button halaman tenaga pendidik -->
       <a href="<?php echo base_url('tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
+      
     </div>  
   </div>
 </section>

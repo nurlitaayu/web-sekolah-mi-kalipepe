@@ -9,31 +9,19 @@
       <h2>Tenaga Pendidik</h2>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <div class="teacher">
-          <img src="https://s3-ap-southeast-1.amazonaws.com/guruberbagi-real/production/cover/medium/176228-1604494329.jpeg" class="teacher-img">
-          <h1>NAMA GURU</h1>
-          <p>Jabatan Guru</p>
+      <?php foreach ($guru as $g) { ?>
+      <div class="col-md-2">
+        <div class="teacher2">
+          <img src="<?php echo base_url().'assets/foto/fotoguru/'.$g->foto_guru ?>" class="teacher2-img" alt="...">
+          <h1><?php echo $g->nama_guru ?></h1>
+          <p><?php echo $g->posisi_jabatan ?></p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="teacher">
-          <img src="https://mmc.tirto.id/image/otf/500x0/2020/11/24/istock-839037320_ratio-16x9.jpg" class="teacher-img">
-          <h1>NAMA GURU</h1>
-          <p>Jabatan Guru</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="teacher">
-          <img src="https://1.bp.blogspot.com/-oYYDeemWD3k/YTw4-ObawKI/AAAAAAAAMdo/2L-4oKHi9WghwT5lWuhWYcu_cPO70jjBACNcBGAsYHQ/s960/Emis%2BTambah%2BGTK%2BBaru.jpg" class="teacher-img">
-          <h1>NAMA GURU</h1>
-          <p>Jabatan Guru</p>
-        </div>
-      </div>
+      <?php } ?>
     </div> 
-    <div class="more-button">
-      <a href="" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
-    </div>  
+    <!-- <div class="more-button">
+      <a href="<?php echo base_url('tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
+    </div>   -->
   </div>
 </section>
 

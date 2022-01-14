@@ -155,19 +155,24 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-3">
-              <label for="exampleInputFile">Foto</label>
-              <img src="">
+          <div class="row" >
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2">
+            <label for="exampleInputFile"><br>( 4 x 6 )</label>    
             </div>
+            
             <div class="col-sm-9">
-              <div class="input-group">
+            <label for="exampleInputFile">Foto</label>
+            <div class="input-group">
                   <div class="custom-file">
                     <input type="file" name="foto_guru" class="custom-file-input" required>
                     <label class="custom-file-label" for="foto">choose file</label>
                   </div>
                 </div>
+                <!-- <div class="invalid-feedback">Example invalid form file feedback</div> -->
+
             </div>
+            
           </div>
       </div>
       <div class="modal-footer justify-content-between">
@@ -241,25 +246,28 @@ foreach($guru as $ssw) : $no++;?>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-3">
-              <label for="exampleInputFile">Foto</label>
-              <img src="">
+          <div class="row" >
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2">
+            <img src="<?php echo base_url().'assets/foto/fotoguru/'.$ssw->foto_guru  ?>" width="70" >    
             </div>
+            
             <div class="col-sm-9">
-              <div class="input-group">
+            <label for="exampleInputFile">Foto</label>
+            <div class="input-group">
                   <div class="custom-file">
                     <input type="file" name="foto_guru" class="custom-file-input" >
                     <label class="custom-file-label" for="foto">choose file</label>
                   </div>
                 </div>
             </div>
+            
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
                 <label>Gambar</label>
                 
-              </div>
-              <img src="<?php echo base_url().'assets/foto/fotoguru/'.$ssw->foto_guru  ?>" width="70">
+              </div> -->
+              <!-- <img src="<?php echo base_url().'assets/foto/fotoguru/'.$ssw->foto_guru  ?>" width="70"> -->
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
