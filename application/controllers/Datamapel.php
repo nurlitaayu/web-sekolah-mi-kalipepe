@@ -35,4 +35,7 @@ class Datamapel extends CI_Controller {
         redirect ('datamapel');
 
     }
+
+	public function edit_guru(){
+	}
 }
