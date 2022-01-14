@@ -154,7 +154,7 @@ foreach($mapel as $ssw) : $no++;?>
 </div>
 <?php endforeach;?>
 
-<!-- /.modal Edit guru -->
+<!-- /.modal Edit mapel -->
 
 <!-- <script type="text/javascript">
    $('#reservationdate').datetimepicker({
