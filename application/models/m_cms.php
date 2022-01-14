@@ -12,9 +12,10 @@ class M_cms extends CI_Model{
         $this->db->insert($table,$data);
         $this->db->insert('tb_post', $data);
     }
-    public function read_post($value=''){
+    public function read_post(){
     	$this->db->select('*');
         $this->db->from('tb_post');
+        $this->db->join('tb_kategori', 'tb_kategori.id_kategori=tb_post.id_kategori');
         $query = $this->db->get();
         return $query->result();
     }
