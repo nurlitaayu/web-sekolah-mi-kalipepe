@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2022 at 04:04 AM
+-- Generation Time: Jan 14, 2022 at 09:56 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -45,7 +45,8 @@ CREATE TABLE `tb_guru` (
 INSERT INTO `tb_guru` (`id_guru`, `id_jabatan`, `nip`, `nama_guru`, `tempat_lahir`, `tgl_lahir`, `pendidikan`, `foto_guru`) VALUES
 (15, 1, '111111', 'Ahmad Junaedi, SH', 'Lumajang', '1989-02-21', 'S1', '1.png'),
 (16, 2, '222222', 'Budiartini, S.Pd.SD', 'Lumajang', '1973-05-23', 'S1', '3.png'),
-(17, 3, '333333', 'Indri Kusumahati, S.Pt', 'Lumajang', '1990-02-14', 'S1', '5.png');
+(17, 3, '333333', 'Indri Kusumahati, S.Pt', 'Lumajang', '1990-02-14', 'S1', '5.png'),
+(18, 2, '1231231', 'Befril Renfiliani Syafitri', 'Jember', '2022-01-03', 'D3', 'bef.jpg');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,9 @@ INSERT INTO `tb_post` (`id_post`, `judul_post`, `id_kategori`, `isi_post`, `tang
 (1, 'coba judul', 2, '<p>coba isi post semoga berhasil</p>\r\n', '2022-01-13', 'IMG_20210928_165116_5371.jpg'),
 (2, 'Prestasi 2', 2, '<p>ini berisi berita prestasi 2</p>\r\n', '2022-01-13', 'IMG_20211005_162110_889.jpg'),
 (3, 'Berita 2', 1, '<p>ini berisi berita dua</p>\r\n', '2022-01-13', 'IMG_20211018_095550_691.jpg'),
-(4, 'Prestasi 3', 2, '<p>ini nanti berisi tentang prestasi 3</p>\r\n\r\n<p> </p>\r\n', '2022-01-13', 'IMG_20211010_015957_569.jpg');
+(4, 'Prestasi 3', 2, '<p>ini nanti berisi tentang prestasi 3</p>\r\n\r\n<p> </p>\r\n', '2022-01-13', 'IMG_20211010_015957_569.jpg'),
+(5, 'Berita 3', 1, '<p>indahnya pemandangan</p>\r\n\r\n<p>banyak ikan terbang</p>\r\n', '2022-01-14', 'IMG_20210928_165116_537.jpg'),
+(6, 'Jejak Karier Ardhito Pramono Sebelum Tertangkap Kasus Narkoba', 1, '<p><strong>JAKARTA </strong>- Kabar mengejutkan datang dari penyanyi dan aktor muda Indonesia, Ardhito Pramono. Ardhito terjerat kasus penyalahgunaan narkotika jenis ganja. Polisi menyebut, Ardhito diamankan di kediamannya di bilangan Jakarta Timur. Hingga kini, proses pemeriksaan Ardhito masih berjalan secara intensif.</p>\r\n\r\n<p>Ardhito lahir pada 22 Mei 1995 di Jakarta dengan nama lengkap Ardhito Rifqi Pramono. Saat menempuh pendidikannya di JMC Academy Creative Industries Australia pada 2013, Ardhito mulai menciptakan beberapa lagu. Proses rekaman lagunya baru dimulai di tahun 2014. Dia memanfaatkan ruang digital seperti Myspace dan Soundcloud untuk memperkenalkan karya-karyanya, sebelum akhirnya aktif di YouTube.</p>\r\n', '2022-01-14', 'ard.jpg');
 
 -- --------------------------------------------------------
 
@@ -224,7 +227,7 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tb_jabatan`
@@ -248,7 +251,7 @@ ALTER TABLE `tb_mapel`
 -- AUTO_INCREMENT for table `tb_post`
 --
 ALTER TABLE `tb_post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_login`
