@@ -116,16 +116,7 @@ class Dataguru extends CI_Controller {
             redirect('dataguru');
         }
        
-        // $data['tb_guru']=$this->m_guru->ambil_guru($id);
-
-    //     $id_guru = $id;
-    //     $foto_guru = $foto;
         
-    //     $this->m_guru->update_guru($id_guru,$foto_guru);
-    //     $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
-    //     Data Berhasil Di Rubah!
-    //     </div>');
-    // redirect('dataguru');
     }
 }
         

@@ -80,7 +80,7 @@
                     <td><?= $ssw->nip ?></td>
                     <td><?= $ssw->tempat_lahir ?></td>
                     <td><?= $ssw->tgl_lahir ?></td>
-                    <td><?= $ssw->id_jabatan ?></td>
+                    <td><?= $ssw->posisi_jabatan ?></td>
                     <td><?= $ssw->pendidikan ?></td>
                     <td><img src="<?php echo base_url().'assets/foto/fotoguru/'.$ssw->foto_guru ?>" width="100"></td>
                     <td>

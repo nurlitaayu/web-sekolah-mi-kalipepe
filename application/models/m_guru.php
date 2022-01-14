@@ -7,6 +7,8 @@ class M_guru extends CI_Model {
     public function read_guru(){
         $this->db->select('*');
         $this->db->from('tb_guru');
+        $this->db->join('tb_jabatan','tb_jabatan.id_jabatan=tb_guru.id_jabatan');
+
         $query = $this->db->get();
         return $query->result();
     }
@@ -43,12 +45,7 @@ class M_guru extends CI_Model {
             $this->db->where('id_guru',$id);
             $this->db->update('tb_guru', $data);
     }
-    // public function edit_guru_tanpafoto($id,$data){
-            
-    //         $this->db->where('id_guru',$id);
-    //         $this->db->update('tb_guru', $data);
-
-    // }
+    
 
     
 
