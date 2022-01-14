@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2022 at 05:37 PM
+-- Generation Time: Jan 14, 2022 at 04:04 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -43,9 +43,9 @@ CREATE TABLE `tb_guru` (
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `id_jabatan`, `nip`, `nama_guru`, `tempat_lahir`, `tgl_lahir`, `pendidikan`, `foto_guru`) VALUES
-(9, 4, '123456', 'Befril Renfiliani Syafitri', 'Jember', '2000-12-01', 'D3 ', 'bef.jpg'),
-(12, 3, '123', 'asd', 'Lumajang', '2022-01-03', 'SMK', '20201111_113225.jpg'),
-(13, 7, '123123', 'Khusnul Khotimah', 'Lumajang', '0000-00-00', 'SMK', 'IMG_3687.JPG');
+(15, 1, '111111', 'Ahmad Junaedi, SH', 'Lumajang', '1989-02-21', 'S1', '1.png'),
+(16, 2, '222222', 'Budiartini, S.Pd.SD', 'Lumajang', '1973-05-23', 'S1', '3.png'),
+(17, 3, '333333', 'Indri Kusumahati, S.Pt', 'Lumajang', '1990-02-14', 'S1', '5.png');
 
 -- --------------------------------------------------------
 
@@ -67,9 +67,7 @@ INSERT INTO `tb_jabatan` (`id_jabatan`, `posisi_jabatan`) VALUES
 (2, 'Bendahara'),
 (3, 'Kurikulum'),
 (4, 'Guru Pengajar'),
-(5, 'Tata Usaha'),
-(6, 'Guru Pengajar'),
-(7, 'Tata Usaha');
+(5, 'Tata Usaha');
 
 -- --------------------------------------------------------
 
@@ -89,9 +87,8 @@ CREATE TABLE `tb_kategori` (
 INSERT INTO `tb_kategori` (`id_kategori`, `kategori`) VALUES
 (1, 'Berita'),
 (2, 'Prestasi'),
-(3, 'galeri'),
-(4, 'asdasd'),
-(11, 'coba lagi');
+(3, 'Galeri'),
+(12, 'Profile Sekolah');
 
 -- --------------------------------------------------------
 
@@ -131,6 +128,31 @@ INSERT INTO `tb_mapel` (`id_mapel`, `mata_pelajaran`) VALUES
 (20, 'Aqidah Akhlak'),
 (21, 'Kemuhammadiyahan'),
 (22, 'Kemuhammadiyahan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_post`
+--
+
+CREATE TABLE `tb_post` (
+  `id_post` int(11) NOT NULL,
+  `judul_post` varchar(64) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `isi_post` longtext NOT NULL,
+  `tanggal_post` date NOT NULL,
+  `foto_post` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_post`
+--
+
+INSERT INTO `tb_post` (`id_post`, `judul_post`, `id_kategori`, `isi_post`, `tanggal_post`, `foto_post`) VALUES
+(1, 'coba judul', 2, '<p>coba isi post semoga berhasil</p>\r\n', '2022-01-13', 'IMG_20210928_165116_5371.jpg'),
+(2, 'Prestasi 2', 2, '<p>ini berisi berita prestasi 2</p>\r\n', '2022-01-13', 'IMG_20211005_162110_889.jpg'),
+(3, 'Berita 2', 1, '<p>ini berisi berita dua</p>\r\n', '2022-01-13', 'IMG_20211018_095550_691.jpg'),
+(4, 'Prestasi 3', 2, '<p>ini nanti berisi tentang prestasi 3</p>\r\n\r\n<p> </p>\r\n', '2022-01-13', 'IMG_20211010_015957_569.jpg');
 
 -- --------------------------------------------------------
 
@@ -182,6 +204,13 @@ ALTER TABLE `tb_mapel`
   ADD PRIMARY KEY (`id_mapel`);
 
 --
+-- Indexes for table `tb_post`
+--
+ALTER TABLE `tb_post`
+  ADD PRIMARY KEY (`id_post`),
+  ADD KEY `id_kategori` (`id_kategori`);
+
+--
 -- Indexes for table `user_login`
 --
 ALTER TABLE `user_login`
@@ -195,7 +224,7 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tb_jabatan`
@@ -207,13 +236,19 @@ ALTER TABLE `tb_jabatan`
 -- AUTO_INCREMENT for table `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tb_mapel`
 --
 ALTER TABLE `tb_mapel`
   MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `tb_post`
+--
+ALTER TABLE `tb_post`
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user_login`
@@ -230,6 +265,12 @@ ALTER TABLE `user_login`
 --
 ALTER TABLE `tb_guru`
   ADD CONSTRAINT `tb_guru_ibfk_2` FOREIGN KEY (`id_jabatan`) REFERENCES `tb_jabatan` (`id_jabatan`);
+
+--
+-- Constraints for table `tb_post`
+--
+ALTER TABLE `tb_post`
+  ADD CONSTRAINT `tb_post_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `tb_kategori` (`id_kategori`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
