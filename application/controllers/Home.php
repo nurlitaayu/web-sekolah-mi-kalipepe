@@ -5,6 +5,7 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('main_model','', TRUE);
+		$this->load->model('m_guru','', TRUE);
 		$this->load->library('pagination');	
 		$this->load->helper('url');			
 	}
@@ -16,6 +17,11 @@ class Home extends CI_Controller {
 		$data['berita'] = $this->main_model->getBerita(3);
 		
 		$this->load->view('main',$data,);
+	}
+
+	public function tenagapendidik(){
+		$data['guru'] = $this->m_guru->read_guru();
+		$this->load->view('tenaga_pendidik',$data);
 	}
 	
 }

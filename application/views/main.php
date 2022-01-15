@@ -1,77 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>MI MUHAMMADIYAH KALIPEPE</title>
-  <link rel="stylesheet" type="text/css" href="assets/main/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="assets/main/style.css">
-
-  <link href="assets/main/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/main/vendor/fontawesome/css/all.css" rel="stylesheet">
-  <link href="assets/main/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-</head>
-<body>
-  <body>
-<!-- Topbar -->
-  <div id="topbar">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="brand">
-            <img src="assets/main/logo.png" width="50" height="50">
-            <div class="brand-name">
-             <h1>MI MUHAMMADIYAH KALIPEPE</h1>
-             <h3>Berani beda, selangkah lebih maju</h3>
-            </div>
-          </div> 
-        </div>
-        <div class="col-md-4 searchbox-wraper">
-          <div class="searchbox">
-            <form method="get">
-              <div class="input-group">
-                <input class="form-control" type="" name="" placeholder="Cari Disini">
-                <div class="input-group-addon">
-                  <button class="btn btn-warning" id="my-addon">Cari</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- end row -->
-    </div>
-    <!-- end container -->
-  </div><!-- end topbar -->
-
-  <nav class="navbar sticky-md-top navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mx-auto text-center">
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="#hero">Home</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li class="dropdown-item"><a class="nav-link" href="#profile">Profile</a></li>
-              <li class="dropdown-item"><a class="nav-link" href="#tenaga">Tenaga Pendidik</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#prestasi">Prestasi</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sarana & Prasarana</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li class="dropdown-item"><a class="nav-link" href="#">Sarana Infratuktur</a></li>
-              <li class="dropdown-item"><a class="nav-link" href="#">Sarana Pembelajaran</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Galeri</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Berita</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav><!-- Nav -->
+<?php $this->load->view('landingpage/a_head.php'); ?>
+<?php $this->load->view('landingpage/a_topbar.php'); ?>
+<?php $this->load->view('landingpage/a_navbar.php'); ?>
 
   <div id="hero" class="carousel carousel-dark slide section-body" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -179,7 +108,7 @@
     </div> 
     <div class="more-button">
       <!-- button halaman tenaga pendidik -->
-      <a href="<?php echo base_url('tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
+      <a href="<?php echo base_url('home/tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
       
     </div>  
   </div>
@@ -270,58 +199,6 @@
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <div class="brand">
-          <img src="assets/main/logo.png" width="50" height="50">
-          <h1 class="brand-name">MI MUHAMMADIYAH <br>KALIPEPE</h1>
-        </div>
-        <div class="submenu">
-          <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptatevelit esse cillum dolore eu fugiat nulla pariatur. </p>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div class="menu">
-          <h1>Kontak Kami</h1>
-          <div class="submenu">
-            <p>Jl. Mayjen soekertiyo Gg. Masjid Baiturrahman Kalipepe, kec. Yosowilangun kab. Lumajang - 67382</p>
-            <ul>
-              <li><i class="fas fa-phone"></i> +62 852-3620-3088</li>
-              <li><i class="fas fa-envelope"></i> mimuhammadiyahkalipepe2017@gmail.com</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="menu">
-          <h1>Navigasi</h1>
-            <div class="submenu">
-              <ul>
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Visi dan Misi</a></li>
-              <li><a href="#">Struktur Organisasi</a></li>
-              <li><a href="#">Pendaftaran PPDB</a></li>
-            </ul>
-            </div>
-        </div>
-      </div>
-    </div>
-    <ul class="sosmed" >
-      <li><a href=""> <i class="fab fa-facebook-f"></i></a></li>
-      <li><a href=""> <i class="fab fa-instagram"></i></a></li>
-      <li><a href=""> <i class="fab fa-youtube"></i></a></li>
-    </ul>    
-  </div>
-</footer>
-
-  <div class="copyright" >
-    <p>Copyright © 2021 | MI Muhammadiyah Kalipepe. All rights reserved.</p>
-  </div>  
-<script src="assets/main/js/bootstrap.js"></script>
-<script src="assets/main/main.js"></script>
-<script src="assets/main/vendor/js/all.js"></script>
-<script src="assets/main/vendor/swiper/swiper-bundle.min.js"></script>
+<?php $this->load->view('landingpage/a_footer.php'); ?>
 </body>
 </html>

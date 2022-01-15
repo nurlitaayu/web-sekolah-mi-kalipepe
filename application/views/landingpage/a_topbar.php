@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-8">
           <div class="brand">
-            <img src="assets/main/logo.png" width="50" height="50">
+            <img src="<?php echo base_url('assets/main/logo.png') ?>" width="50" height="50">
             <div class="brand-name">
              <h1>MI MUHAMMADIYAH KALIPEPE</h1>
              <h3>Berani beda, selangkah lebih maju</h3>

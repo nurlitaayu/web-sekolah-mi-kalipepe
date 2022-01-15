@@ -1,7 +1,6 @@
 <?php $this->load->view('landingpage/a_head.php'); ?>
 <?php $this->load->view('landingpage/a_topbar.php'); ?>
 <?php $this->load->view('landingpage/a_navbar.php'); ?>
-
 <!-- ======= Tenaga Pendidik Section ======= -->
 <section id="tenaga">
   <div class="container">
@@ -28,3 +27,5 @@
 
 
 <?php $this->load->view('landingpage/a_footer.php'); ?>
+</body>
+</html>
