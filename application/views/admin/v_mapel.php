@@ -38,7 +38,6 @@
           <div class="card">
             <div class="card-header">
               <button class="btn btn-xs btn-primary card-title" data-toggle="modal" data-target="#tambah-mapel"><i class="fas fa-plus"></i> Tambah Mata Pelajaran</button>
-
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
                   <input type="text" id="table_search" class="form-control float-right" placeholder="Search">
@@ -125,6 +124,8 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
+      </div>
+
 
       <!-- /.content-wrapper -->
       <?php $no = 1;
@@ -150,7 +151,7 @@
                           <input type="text" name="mata_pelajaran" class="form-control">
                                           
                         </div>
-                    <!-- </form> -->
+                    
                       </div>
                     </div>
                 <div class="modal-footer justify-content-between">
