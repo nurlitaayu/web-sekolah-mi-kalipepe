@@ -5,7 +5,14 @@ class M_cms extends CI_Model{
 		parent::__construct();
 		$this->load->database();
 	}
-
+//model carousel
+    public function read_carousel(){
+    	$this->db->select('*');
+        $this->db->from('tb_carousel');
+        $query = $this->db->get();
+        return $query->result();
+    }
+//End model Post
 
 //model Post
 	public function add_post($data,$table){

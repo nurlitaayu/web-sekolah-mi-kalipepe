@@ -1,6 +1,12 @@
 <?php 
 
 class Main_model extends CI_Model{
+
+//Prestasi Model
+	public function getCarousel($limit){
+		return $this->db->get('tb_carousel', $limit)->result();
+	}
+//end prestasi model
 	
 //Prestasi Model
 	public function getPost($limit){

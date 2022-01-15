@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2022 at 09:56 AM
+-- Generation Time: Jan 15, 2022 at 10:07 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `login`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_carousel`
+--
+
+CREATE TABLE `tb_carousel` (
+  `id_carousel` int(11) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
+  `headline` varchar(32) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `status` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_carousel`
+--
+
+INSERT INTO `tb_carousel` (`id_carousel`, `gambar`, `headline`, `deskripsi`, `status`) VALUES
+(2, '11.jpg', 'MI Muhammadiyah Kalipepe', '\"Berani Beda, Selangkah Lebih Maju\"', 'active'),
+(3, '2.jpg', 'Kegiatan Belajar  Mengajar', 'Deskripsi Kegiatan Belajar Mengajar', ''),
+(4, '3.jpg', 'Headline 3', 'Deskripsi 3', '');
 
 -- --------------------------------------------------------
 
@@ -89,7 +112,8 @@ INSERT INTO `tb_kategori` (`id_kategori`, `kategori`) VALUES
 (1, 'Berita'),
 (2, 'Prestasi'),
 (3, 'Galeri'),
-(12, 'Profile Sekolah');
+(12, 'Profile Sekolah'),
+(15, 'Carousel');
 
 -- --------------------------------------------------------
 
@@ -142,20 +166,21 @@ CREATE TABLE `tb_post` (
   `id_kategori` int(11) NOT NULL,
   `isi_post` longtext NOT NULL,
   `tanggal_post` date NOT NULL,
-  `foto_post` varchar(64) NOT NULL
+  `foto_post` varchar(64) NOT NULL,
+  `embed_video` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_post`
 --
 
-INSERT INTO `tb_post` (`id_post`, `judul_post`, `id_kategori`, `isi_post`, `tanggal_post`, `foto_post`) VALUES
-(1, 'coba judul', 2, '<p>coba isi post semoga berhasil</p>\r\n', '2022-01-13', 'IMG_20210928_165116_5371.jpg'),
-(2, 'Prestasi 2', 2, '<p>ini berisi berita prestasi 2</p>\r\n', '2022-01-13', 'IMG_20211005_162110_889.jpg'),
-(3, 'Berita 2', 1, '<p>ini berisi berita dua</p>\r\n', '2022-01-13', 'IMG_20211018_095550_691.jpg'),
-(4, 'Prestasi 3', 2, '<p>ini nanti berisi tentang prestasi 3</p>\r\n\r\n<p> </p>\r\n', '2022-01-13', 'IMG_20211010_015957_569.jpg'),
-(5, 'Berita 3', 1, '<p>indahnya pemandangan</p>\r\n\r\n<p>banyak ikan terbang</p>\r\n', '2022-01-14', 'IMG_20210928_165116_537.jpg'),
-(6, 'Jejak Karier Ardhito Pramono Sebelum Tertangkap Kasus Narkoba', 1, '<p><strong>JAKARTA </strong>- Kabar mengejutkan datang dari penyanyi dan aktor muda Indonesia, Ardhito Pramono. Ardhito terjerat kasus penyalahgunaan narkotika jenis ganja. Polisi menyebut, Ardhito diamankan di kediamannya di bilangan Jakarta Timur. Hingga kini, proses pemeriksaan Ardhito masih berjalan secara intensif.</p>\r\n\r\n<p>Ardhito lahir pada 22 Mei 1995 di Jakarta dengan nama lengkap Ardhito Rifqi Pramono. Saat menempuh pendidikannya di JMC Academy Creative Industries Australia pada 2013, Ardhito mulai menciptakan beberapa lagu. Proses rekaman lagunya baru dimulai di tahun 2014. Dia memanfaatkan ruang digital seperti Myspace dan Soundcloud untuk memperkenalkan karya-karyanya, sebelum akhirnya aktif di YouTube.</p>\r\n', '2022-01-14', 'ard.jpg');
+INSERT INTO `tb_post` (`id_post`, `judul_post`, `id_kategori`, `isi_post`, `tanggal_post`, `foto_post`, `embed_video`) VALUES
+(1, 'coba judul', 2, '<p>coba isi post semoga berhasil</p>\r\n', '2022-01-13', 'IMG_20210928_165116_5371.jpg', ''),
+(2, 'Prestasi 2', 2, '<p>ini berisi berita prestasi 2</p>\r\n', '2022-01-13', 'IMG_20211005_162110_889.jpg', ''),
+(3, 'Berita 2', 1, '<p>ini berisi berita dua</p>\r\n', '2022-01-13', 'IMG_20211018_095550_691.jpg', ''),
+(4, 'Prestasi 3', 2, '<p>ini nanti berisi tentang prestasi 3</p>\r\n\r\n<p> </p>\r\n', '2022-01-13', 'IMG_20211010_015957_569.jpg', ''),
+(5, 'Berita 3', 1, '<p>indahnya pemandangan</p>\r\n\r\n<p>banyak ikan terbang</p>\r\n', '2022-01-14', 'IMG_20210928_165116_537.jpg', ''),
+(6, 'Jejak Karier Ardhito Pramono Sebelum Tertangkap Kasus Narkoba', 1, '<p><strong>JAKARTA </strong>- Kabar mengejutkan datang dari penyanyi dan aktor muda Indonesia, Ardhito Pramono. Ardhito terjerat kasus penyalahgunaan narkotika jenis ganja. Polisi menyebut, Ardhito diamankan di kediamannya di bilangan Jakarta Timur. Hingga kini, proses pemeriksaan Ardhito masih berjalan secara intensif.</p>\r\n\r\n<p>Ardhito lahir pada 22 Mei 1995 di Jakarta dengan nama lengkap Ardhito Rifqi Pramono. Saat menempuh pendidikannya di JMC Academy Creative Industries Australia pada 2013, Ardhito mulai menciptakan beberapa lagu. Proses rekaman lagunya baru dimulai di tahun 2014. Dia memanfaatkan ruang digital seperti Myspace dan Soundcloud untuk memperkenalkan karya-karyanya, sebelum akhirnya aktif di YouTube.</p>\r\n', '2022-01-14', 'ard.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -180,6 +205,12 @@ INSERT INTO `user_login` (`id`, `user_name`, `user_password`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tb_carousel`
+--
+ALTER TABLE `tb_carousel`
+  ADD PRIMARY KEY (`id_carousel`);
 
 --
 -- Indexes for table `tb_guru`
@@ -224,6 +255,12 @@ ALTER TABLE `user_login`
 --
 
 --
+-- AUTO_INCREMENT for table `tb_carousel`
+--
+ALTER TABLE `tb_carousel`
+  MODIFY `id_carousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
@@ -239,7 +276,7 @@ ALTER TABLE `tb_jabatan`
 -- AUTO_INCREMENT for table `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tb_mapel`

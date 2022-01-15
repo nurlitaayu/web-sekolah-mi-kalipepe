@@ -12,6 +12,8 @@ class Home extends CI_Controller {
 
 	public function index()	{
 		// $data['prestasi'] = $this->main_model->read_post()->result();
+
+		$data['carousel'] = $this->main_model->getCarousel(3);
 		$data['prestasi'] = $this->main_model->getPost(3);
 		$data['guru'] = $this->main_model->getGuru(3);
 		$data['berita'] = $this->main_model->getBerita(3);

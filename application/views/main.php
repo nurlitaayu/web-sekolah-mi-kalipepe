@@ -2,26 +2,23 @@
 <?php $this->load->view('landingpage/a_topbar.php'); ?>
 <?php $this->load->view('landingpage/a_navbar.php'); ?>
 
+  <!-- ======= About Us Section ======= -->
   <div id="hero" class="carousel carousel-dark slide section-body" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#hero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#hero" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#hero" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="3000">
-        <img src="https://eitrawmaterials.eu/wp-content/uploads/2019/05/Label-brochure-1.jpg" class="d-block w-100">
+      <?php foreach ($carousel as $crs): ?>
+      <div class="carousel-item <?php echo $crs->status ?>" data-bs-interval="3000">
+        <img src="<?php echo base_url().'assets/foto/carousel/'.$crs->gambar ?>" class="d-block w-100">
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h5><?php echo $crs->headline ?></h5>
+          <p><i><?php echo $crs->deskripsi ?></i></p>
         </div>
       </div>
-      <div class="carousel-item" data-bs-interval="3000">
-        <img src="https://internationaljournalofresearch.files.wordpress.com/2019/11/www.usnews.com_.jpg" class="d-block w-100">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
+      <?php endforeach ?>
     <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -87,7 +84,7 @@
         <a href="" class="btn btn-more" type="button">Lihat Prestasi Lain</a>
       </div>  
     </div>
-  </section><!-- End About Us Section -->
+  </section><!-- End Prestasi Section -->
 
 <!-- ======= Tenaga Pendidik Section ======= -->
 <section id="tenaga">
@@ -109,7 +106,6 @@
     <div class="more-button">
       <!-- button halaman tenaga pendidik -->
       <a href="<?php echo base_url('home/tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
-      
     </div>  
   </div>
 </section>

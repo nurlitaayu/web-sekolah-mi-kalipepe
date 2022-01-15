@@ -72,7 +72,7 @@
                     <td><?php echo $no++ ?></td>
                     <td><?php echo $p->kategori ?></td>
                     <td><?php echo $p->judul_post ?></td>
-                    <td><?php echo $p->isi_post ?></td>
+                    <td><?php echo substr($p->isi_post,0, 50) ?></td>
                     <td><?php echo $p->tanggal_post ?></td>
                     <td><img src="<?php echo base_url().'assets/foto/fotopost/'.$p->foto_post ?>" width="100"></td>
                     <td>
