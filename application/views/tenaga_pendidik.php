@@ -5,7 +5,7 @@
 <!-- ======= Tenaga Pendidik Section ======= -->
 <section id="tenaga">
   <div class="container">
-    <div class="section-title">
+    <div class="title-guru">
       <h2>Tenaga Pendidik</h2>
     </div>
     <div class="row">

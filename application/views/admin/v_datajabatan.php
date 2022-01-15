@@ -70,7 +70,7 @@
                     <td><?= $ssw->posisi_jabatan ?></td>                    
                     <td>
                       <button class="btn btn-sm btn-warning"><i class="fas fa-edit" style="color: #fff;"></i></button>
-                      <button class="btn btn-sm btn-danger" onClick="delete_data(<?=$ssw->id_jabatan;?>)"><i class="fas fa-trash"></i></button>
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Datajabatan/delete/<?=$ssw->id_jabatan;?>"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                 </tbody>

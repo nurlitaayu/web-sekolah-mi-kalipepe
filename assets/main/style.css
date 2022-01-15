@@ -167,6 +167,33 @@ aside .brand h1{
   z-index: 2;
 }
 
+
+/* title halaman tenaga pendidik  */
+
+.title-guru {
+	margin-bottom: 60px;
+	text-align: center;
+}
+.title-guru h2{
+	position: relative;
+	display: inline-block;
+	/* margin: 0 auto; */
+	margin-top: 20px;
+	font-size: 28px;
+	text-transform: uppercase;
+	color: #15477A;
+	font-weight: 600;
+}
+.title-guru h2:after {
+	position: absolute;
+	content: "";
+	width: 90%;
+	height: 3px;
+	background-color: #ffc107;
+	bottom: -15px;
+	left: 50%;
+	transform: translateX(-50%);
+}
 /* css halaman tenaga pendidik */
 .teacher2 h1{
 	position: relative;
