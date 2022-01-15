@@ -128,10 +128,10 @@
       <!-- /.modal -->
       </div>
       </div>
-
+<!-- 
 <div class="modal fade" id="edit_mapel">
   <div class="modal-dialog modal-lg">
-  <!--- <form action="<?= base_url('datamapel/tambah_aksi')?>"method="POST"> -->
+  
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Edit Mata Pelajaran</h4>
@@ -147,7 +147,7 @@
                 <label>Mata Pelajaran</label>
                 <input type="text" name="mata_pelajaran" class="form-control">                                  
               </div>
-          <!-- </form> -->
+          
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -155,12 +155,12 @@
             </div>
         </div>
       </form>
-    <!-- /.modal-content -->
+    
     </div>
-  <!-- /.modal-dialog -->
+  
   </div>
   </div>
-  </div>
+  </div> -->
   
  
 
@@ -171,11 +171,11 @@
       <div class="modal fade" id="edit-mapel<?php echo $ssw->id_mapel; ?>">
       
         <div class="modal-dialog modal-lg">
-          <!--- <form action="<?= base_url('datamapel/tambah_aksi')?>"method="POST"> -->
+          - <form action="<?= base_url('datamapel/edit_mapel')?>"method="POST">
           <div class="modal-content">
             
                 <div class="modal-header">
-                  <h4 class="modal-title">Tambah Mata Pelajaran</h4>
+                  <h4 class="modal-title">Edit Mata Pelajaran</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -186,7 +186,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label>Mata Pelajaran</label>
-                          <input type="text" name="mata_pelajaran" class="form-control">
+                          <input type="text" name="mata_pelajaran" class="form-control" value="<?php echo $ssw->mata_pelajaran;?>">
                                           
                         </div>
                     
@@ -195,7 +195,7 @@
                 <div class="modal-footer justify-content-between">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary" id="tombolsimpan">Save changes</button>
-                  <?php echo form_close();?>
+                  <!-- <?php echo form_close();?> -->
                 </div>
                 </form>
               </div>
