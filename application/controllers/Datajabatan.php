@@ -25,9 +25,9 @@ class DataJabatan extends CI_Controller {
 		
 	}
 
-	public function delete(){
-		$id_jabatan = $this->input->post('id_jabatan');	
-		$this->m_jabatan->delete('tb_jabatan', $id_jabatan);		
+	public function delete($id){
+		$this->m_jabatan->delete($id);
+        redirect ('datajabatan');		
 	}
 }
 

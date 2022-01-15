@@ -35,9 +35,9 @@ class m_jabatan extends CI_Model {
 
     }
 
-    public function delete($table, $id){
-        $this->db->where('id_jabatan', $id);    
-        $this->db->delete($table);
+    public function delete($id){
+        $this->db->where('id_jabatan', $id);
+        $this->db->delete('tb_jabatan', array('id_jabatan' => $id));
     }
 
 }
