@@ -38,7 +38,6 @@
           <div class="card">
             <div class="card-header">
               <button class="btn btn-xs btn-primary card-title" data-toggle="modal" data-target="#tambah-mapel"><i class="fas fa-plus"></i> Tambah Mata Pelajaran</button>
-
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
                   <input type="text" id="table_search" class="form-control float-right" placeholder="Search">
@@ -68,7 +67,7 @@
                     <td><?= $no++ ?></td>
                     <td><?= $ssw->mata_pelajaran ?></td>
                     <td>
-                      <button class="btn btn-sm btn-warning"><i class="fas fa-edit" style="color: #fff;"></i></button>
+                      <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit_mapel"><i class="fas fa-edit" style="color: #fff;"></i></button>
                       <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Datamapel/hapus_mapel/<?= $ssw->id_mapel; ?>" ><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
@@ -84,13 +83,44 @@
     </div>
     <!-- /.content -->
   </div>
+
   <?php $this->load->view('template/footer.php'); ?>
+<div class="modal fade" id="edit_mapel">
+  <div class="modal-dialog modal-lg">
+  <!--- <form action="<?= base_url('datamapel/tambah_aksi')?>"method="POST"> -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Mata Pelajaran</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Mata Pelajaran</label>
+                <input type="text" name="mata_pelajaran" class="form-control">                                  
+              </div>
+          <!-- </form> -->
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" id="tombolsimpan">Save changes</button>
+            </div>
+        </div>
+      </form>
+    <!-- /.modal-content -->
+    </div>
+  <!-- /.modal-dialog -->
+  </div>
+  
   <!-- /.content-wrapper -->
       <div class="modal fade" id="tambah-mapel">
         <div class="modal-dialog modal-lg">
         <!--- <form action="<?= base_url('datamapel/tambah_aksi')?>"method="POST"> -->
           <div class="modal-content">
-            
             <div class="modal-header">
               <h4 class="modal-title">Tambah Mata Pelajaran</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -122,12 +152,14 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
+      </div>
+
 
 <!-- modal edit mapel -->
 <!--  -->
-<?php $no = 1;
+<!-- <?php $no = 1;
 foreach($mapel as $ssw) : $no++;?>
-<div class="modal fade" id="edit-mapel<?php echo $ssw->id_mapel; ?>">
+<div class="modal fade" id="edihht-mapel<?php echo $ssw->id_mapel; ?>">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -147,12 +179,13 @@ foreach($mapel as $ssw) : $no++;?>
                 <label>Mata Pelajaran</label>
                 <input type="text" name="mata_pelajaran" class="form-control" value="<?php echo $ssw->mata_pelajaran;?>" required>
               </div>
-  </form>
+        </form>
+                </div>
   <!-- /.modal-content -->
 </div>
 <!-- /.modal-dialog -->
 </div>
-<?php endforeach;?>
+<?php endforeach;?> -->
 
 <!-- /.modal Edit mapel -->
 

@@ -36,6 +36,11 @@ class Datamapel extends CI_Controller {
 
     }
 
-	public function edit_guru(){
+	public function edit_mapel(){
+		$this->m_mapel->edit_mapel($id,$data);
+		$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+		berhasil di simpan
+	  </div>');
+		redirect('datamapel');
 	}
 }
