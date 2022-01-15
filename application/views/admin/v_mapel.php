@@ -85,39 +85,9 @@
   </div>
 
   <?php $this->load->view('template/footer.php'); ?>
-<div class="modal fade" id="edit_mapel">
-  <div class="modal-dialog modal-lg">
-  <!--- <form action="<?= base_url('datamapel/tambah_aksi')?>"method="POST"> -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Edit Mata Pelajaran</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label>Mata Pelajaran</label>
-                <input type="text" name="mata_pelajaran" class="form-control">                                  
-              </div>
-          <!-- </form> -->
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" id="tombolsimpan">Save changes</button>
-            </div>
-        </div>
-      </form>
-    <!-- /.modal-content -->
-    </div>
-  <!-- /.modal-dialog -->
-  </div>
-  
-  <!-- /.content-wrapper -->
-      <div class="modal fade" id="tambah-mapel">
+
+   <!-- /.content-wrapper -->
+   <div class="modal fade" id="tambah-mapel">
         <div class="modal-dialog modal-lg">
         <!--- <form action="<?= base_url('datamapel/tambah_aksi')?>"method="POST"> -->
           <div class="modal-content">
@@ -153,6 +123,42 @@
       </div>
       <!-- /.modal -->
       </div>
+      </div>
+
+<div class="modal fade" id="edit_mapel">
+  <div class="modal-dialog modal-lg">
+  <!--- <form action="<?= base_url('datamapel/tambah_aksi')?>"method="POST"> -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Mata Pelajaran</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Mata Pelajaran</label>
+                <input type="text" name="mata_pelajaran" class="form-control">                                  
+              </div>
+          <!-- </form> -->
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" id="tombolsimpan">Save changes</button>
+            </div>
+        </div>
+      </form>
+    <!-- /.modal-content -->
+    </div>
+  <!-- /.modal-dialog -->
+  </div>
+  </div>
+  </div>
+  
+ 
 
 
 <!-- modal edit mapel -->
