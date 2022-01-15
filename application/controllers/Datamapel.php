@@ -37,6 +37,14 @@ class Datamapel extends CI_Controller {
     }
 
 	public function edit_mapel(){
+		$id= $this->input->post('id');
+		$mata_pelajaran		= $this->input->post('mata_pelajaran', TRUE);
+		$data = array(
+			'mata_pelajaran' => $mata_pelajaran
+			
+			
+		);
+		
 		$this->m_mapel->edit_mapel($id,$data);
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
 		berhasil di simpan

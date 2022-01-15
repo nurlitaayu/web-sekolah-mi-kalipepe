@@ -268,14 +268,14 @@ foreach($guru as $ssw) : $no++;?>
                 
               </div> -->
               <!-- <img src="<?php echo base_url().'assets/foto/fotoguru/'.$ssw->foto_guru  ?>" width="70"> -->
-      </div>
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" >Save changes</button>
-        <?php echo form_close();?>
-      </div>
-  </div>
-  </form>
+          </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" >Save changes</button>
+                <?php echo form_close();?>
+              </div>
+          </div>
+        </form>
   <!-- /.modal-content -->
 </div>
 <!-- /.modal-dialog -->
