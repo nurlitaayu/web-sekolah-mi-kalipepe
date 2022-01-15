@@ -33,7 +33,6 @@ class m_mapel extends CI_Model {
         $this->db->where('id_mapel',$id);
         $this->db->update('tb_mapel', $data);
 }
-
     public function delete_mapel($id){
         
         $this->db->where('id_mapel', $id);
