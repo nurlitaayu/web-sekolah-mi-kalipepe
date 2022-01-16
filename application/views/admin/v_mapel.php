@@ -181,6 +181,10 @@
                   </button>
                 </div>
               <div class="modal-body">
+                <?php echo form_open_multipart('datamapel/edit_mapel'); ?>
+                <input type="hidden" name="id" value="<?php echo $ssw->id_mapel;?>">
+
+
                   <form>
                     <div class="row">
                       <div class="col-sm-6">
@@ -194,8 +198,8 @@
                     </div>
                 <div class="modal-footer justify-content-between">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary" id="tombolsimpan">Save changes</button>
-                  <!-- <?php echo form_close();?> -->
+                  <button type="submit" class="btn btn-primary" id="tombolsimpan" >Save changes</button>
+                  <?php echo form_close();?>
                 </div>
                 </form>
               </div>
