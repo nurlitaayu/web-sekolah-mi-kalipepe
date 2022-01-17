@@ -56,15 +56,15 @@ class Cms extends CI_Controller {
 //End Slider Controller
 
 //Profile
+	//Read Profile
+	public function profile()	{
+		// $data['prestasi'] = $this->m_cms->read_prestasi();
+		$this->load->view('admin/cms/v_profile');
+	}
 //End Profile Controller
 
 //Prestasi
-	//Read Post
-	public function prestasi()	{
-		$data['prestasi'] = $this->m_cms->read_prestasi();
-		$this->load->view('admin/cms/v_prestasi',$data);
-	}
-	//Create Post
+	//Create Prestasi
 	public function tambah_prestasi(){
 		$config['upload_path']          = './assets/foto/fotoprestasi';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
@@ -100,9 +100,14 @@ class Cms extends CI_Controller {
             redirect('cms/prestasi');
         }
     }
+    //Read Prestasi
+	public function prestasi()	{
+		$data['prestasi'] = $this->m_cms->read_prestasi();
+		$this->load->view('admin/cms/v_prestasi',$data);
+	}
 //End Prestasi Controller
 
-//Kategori Post
+//Post
 	//Read Post
 	public function index()	{
 		$data['post'] = $this->m_cms->read_post();
@@ -146,12 +151,13 @@ class Cms extends CI_Controller {
     }
 //End Kategori Post
 
-//Kategori Page
-	public function pages() {
-		$data['post'] = $this->m_cms->read_post();
-		$this->load->view('admin/cms/v_page',$data);
+//Galeri
+	//Read Galeri
+	public function galeri()	{
+		// $data['prestasi'] = $this->m_cms->read_prestasi();
+		$this->load->view('admin/cms/v_galeri');
 	}
-//End Kategori Page
+//End Galeri Controller
 
 //Kategori Kontroller
 	public function kategori() {
