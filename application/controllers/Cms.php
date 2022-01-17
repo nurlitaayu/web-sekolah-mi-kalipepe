@@ -63,6 +63,7 @@ class Cms extends CI_Controller {
 	}
 //End Profile Controller
 
+
 //Prestasi
 	//Create Prestasi
 	public function tambah_prestasi(){
@@ -106,6 +107,63 @@ class Cms extends CI_Controller {
 		$this->load->view('admin/cms/v_prestasi',$data);
 	}
 //End Prestasi Controller
+
+
+
+//geleri
+	//Create galeri
+	public function tambah_galeri(){
+		$config['upload_path']          = './assets/foto/fotogaleri';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 10000000;
+        $config['max_width']            = 10000000;
+        $config['max_height']           = 10000000;
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);  
+
+        if ( ! $this->upload->do_upload('gambar')){
+            
+            print_r($this->upload->display_errors());
+            die;
+        }else{
+            $foto_gl 		= $this->upload->data();
+            $foto_gl 		= $foto_gl['file_name'];
+            $judul_gl 	= $this->input->post('judul_gl', TRUE);
+            // $isi_post 		= $this->input->post('isi_post', TRUE);
+            // $id_kategori 	= $this->input->post('id_kategori', TRUE);
+            $tanggal_gl 	= $this->input->post('tanggal_gl', TRUE);
+
+            $data = array(
+            	'judul' => $judul_gl,
+            	// 'isi_post' => $isi_post,
+            	'tanggal_gl' => $tanggal_gl,
+            	// 'id_kategori' => $id_kategori,
+            	'gambar' => $foto_gl
+            );
+            $this->db->insert('tb_galeri', $data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            	Data Berhasil Disimpan!</div>');
+            redirect('cms/galeri');
+        }
+    }
+    //Read galeri
+	public function galeri()	{
+		$data['galeri'] = $this->m_cms->read_galeri();
+		$this->load->view('admin/cms/v_galeri',$data);
+	}
+	// hapus galeri
+	public function hapus_galeri($id,$gambar){
+
+        $id_galeri = $id;
+        $gambar = $gambar;
+        
+        $this->m_cms->delete_galeri($id_galeri, $gambar);
+
+        redirect ('cms/galeri');
+
+    }
+//End galeri Controller
 
 //Post
 	//Read Post
@@ -151,13 +209,7 @@ class Cms extends CI_Controller {
     }
 //End Kategori Post
 
-//Galeri
-	//Read Galeri
-	public function galeri()	{
-		// $data['prestasi'] = $this->m_cms->read_prestasi();
-		$this->load->view('admin/cms/v_galeri');
-	}
-//End Galeri Controller
+
 
 //Kategori Kontroller
 	public function kategori() {

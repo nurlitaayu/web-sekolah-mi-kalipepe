@@ -29,6 +29,27 @@ class M_cms extends CI_Model{
     }
 //End model Prestasi
 
+//model galeri
+	public function add_galeri($data,$table){
+        $this->db->insert($table,$data);
+        $this->db->insert('tb_galeri', $data);
+    }
+    public function read_galeri(){
+    	$this->db->select('*');
+        $this->db->from('tb_galeri');
+        // $this->db->where('id_kategori', '3');
+        $this->db->order_by("id_galeri", "desc");
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+	public function delete_galeri($id_galeri, $gambar){
+        $this->db->where('id_galeri', $id_galeri);
+        $this->db->delete('tb_galeri', array('id_galeri' => $id_galeri));
+        unlink(FCPATH."/foto/fotogaleri/".$gambar);
+    }
+//End model galeri
+
 //model Post
 	public function add_post($data,$table){
         $this->db->insert($table,$data);

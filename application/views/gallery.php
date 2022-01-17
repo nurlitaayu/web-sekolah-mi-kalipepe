@@ -5,7 +5,7 @@
 <section id="tenaga">
   <div class="container">
     <div class="title-guru">
-      <h2>Tenaga Pendidik</h2>
+      <h2>Galeri Sekolah</h2>
     </div>
     <div class="row">
       <div class="col-md-2">
