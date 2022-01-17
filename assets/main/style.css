@@ -27,7 +27,7 @@ aside .brand h1{
   top: -40px;
 }
 #header.navbar-scrolled {
-  top: 0;
+  top: 1;
 }
 .fixed-top {
   position: fixed;
@@ -242,10 +242,10 @@ aside .brand h1{
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #3fbbc0;
+  border: 1px solid #15477A;
 }
 .gallery .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #3fbbc0;
+  background-color: #15477A;
 }
 .gallery .swiper-slide-active {
   text-align: center;
@@ -255,7 +255,7 @@ aside .brand h1{
     padding: 40px 0;
   }
   .gallery .swiper-slide-active {
-    border: 6px solid #3fbbc0;
+    border: 6px solid #15477A;
     padding: 4px;
     background: #fff;
     z-index: 1;
