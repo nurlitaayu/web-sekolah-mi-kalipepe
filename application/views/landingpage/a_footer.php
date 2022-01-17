@@ -1,4 +1,5 @@
 <footer>
+<section id="kontak">
   <div class="container">
     <div class="row">
       <div class="col-md-5">
@@ -42,6 +43,7 @@
       <li><a href=""> <i class="fab fa-youtube"></i></a></li>
     </ul>    
   </div>
+</section>
 </footer>
 
   <div class="copyright" >

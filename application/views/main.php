@@ -1,4 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <title>MI MUHAMMADIYAH KALIPEPE</title>
+  
 <?php $this->load->view('landingpage/a_head.php'); ?>
+</head>
+<body>
+
 <?php $this->load->view('landingpage/a_topbar.php'); ?>
 <?php $this->load->view('landingpage/a_navbar.php'); ?>
 
@@ -111,7 +118,7 @@
 </section>
 
 <!-- ======= Gallery Section ======= -->
-<section id="gallery" class="gallery">
+<section id="galeri" class="gallery">
   <div class="container">
     <div class="section-title">
       <h2>Gallery</h2>
@@ -169,7 +176,7 @@
 </section>
 
 <!-- ======= Berita Section ======= -->
-<section id="tenaga">
+<section id="berita">
   <div class="container">
     <div class="section-title">
       <h2>Berita</h2>

@@ -21,9 +21,9 @@
               <li class="dropdown-item"><a class="nav-link" href="#">Sarana Pembelajaran</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">Galeri</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Berita</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
         </ul>
       </div>
     </div>
