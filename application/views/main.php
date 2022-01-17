@@ -160,6 +160,10 @@
       </div>
     </div>
     <div class="swiper-pagination"></div>
+    <div class="more-button">
+      <!-- button halaman tenaga pendidik -->
+      <a href="<?php echo base_url('home/tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Gallery</a>
+    </div>  
   </div>
   </div>
 </section>
