@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2022 at 10:07 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.31
+-- Generation Time: Jan 17, 2022 at 10:07 AM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,6 +43,26 @@ INSERT INTO `tb_carousel` (`id_carousel`, `gambar`, `headline`, `deskripsi`, `st
 (2, '11.jpg', 'MI Muhammadiyah Kalipepe', '\"Berani Beda, Selangkah Lebih Maju\"', 'active'),
 (3, '2.jpg', 'Kegiatan Belajar  Mengajar', 'Deskripsi Kegiatan Belajar Mengajar', ''),
 (4, '3.jpg', 'Headline 3', 'Deskripsi 3', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_galeri`
+--
+
+CREATE TABLE `tb_galeri` (
+  `id_galeri` int(11) NOT NULL,
+  `judul` varchar(225) NOT NULL,
+  `tanggal_gl` date NOT NULL,
+  `gambar` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_galeri`
+--
+
+INSERT INTO `tb_galeri` (`id_galeri`, `judul`, `tanggal_gl`, `gambar`) VALUES
+(3, 'gambar 1', '2022-01-17', '2760238.png');
 
 -- --------------------------------------------------------
 
@@ -180,7 +200,8 @@ INSERT INTO `tb_post` (`id_post`, `judul_post`, `id_kategori`, `isi_post`, `tang
 (3, 'Berita 2', 1, '<p>ini berisi berita dua</p>\r\n', '2022-01-13', 'IMG_20211018_095550_691.jpg', ''),
 (4, 'Prestasi 3', 2, '<p>ini nanti berisi tentang prestasi 3</p>\r\n\r\n<p> </p>\r\n', '2022-01-13', 'IMG_20211010_015957_569.jpg', ''),
 (5, 'Berita 3', 1, '<p>indahnya pemandangan</p>\r\n\r\n<p>banyak ikan terbang</p>\r\n', '2022-01-14', 'IMG_20210928_165116_537.jpg', ''),
-(6, 'Jejak Karier Ardhito Pramono Sebelum Tertangkap Kasus Narkoba', 1, '<p><strong>JAKARTA </strong>- Kabar mengejutkan datang dari penyanyi dan aktor muda Indonesia, Ardhito Pramono. Ardhito terjerat kasus penyalahgunaan narkotika jenis ganja. Polisi menyebut, Ardhito diamankan di kediamannya di bilangan Jakarta Timur. Hingga kini, proses pemeriksaan Ardhito masih berjalan secara intensif.</p>\r\n\r\n<p>Ardhito lahir pada 22 Mei 1995 di Jakarta dengan nama lengkap Ardhito Rifqi Pramono. Saat menempuh pendidikannya di JMC Academy Creative Industries Australia pada 2013, Ardhito mulai menciptakan beberapa lagu. Proses rekaman lagunya baru dimulai di tahun 2014. Dia memanfaatkan ruang digital seperti Myspace dan Soundcloud untuk memperkenalkan karya-karyanya, sebelum akhirnya aktif di YouTube.</p>\r\n', '2022-01-14', 'ard.jpg', '');
+(6, 'Jejak Karier Ardhito Pramono Sebelum Tertangkap Kasus Narkoba', 1, '<p><strong>JAKARTA </strong>- Kabar mengejutkan datang dari penyanyi dan aktor muda Indonesia, Ardhito Pramono. Ardhito terjerat kasus penyalahgunaan narkotika jenis ganja. Polisi menyebut, Ardhito diamankan di kediamannya di bilangan Jakarta Timur. Hingga kini, proses pemeriksaan Ardhito masih berjalan secara intensif.</p>\r\n\r\n<p>Ardhito lahir pada 22 Mei 1995 di Jakarta dengan nama lengkap Ardhito Rifqi Pramono. Saat menempuh pendidikannya di JMC Academy Creative Industries Australia pada 2013, Ardhito mulai menciptakan beberapa lagu. Proses rekaman lagunya baru dimulai di tahun 2014. Dia memanfaatkan ruang digital seperti Myspace dan Soundcloud untuk memperkenalkan karya-karyanya, sebelum akhirnya aktif di YouTube.</p>\r\n', '2022-01-14', 'ard.jpg', ''),
+(7, 'coba', 2, '', '2022-01-17', '2823401.png', '');
 
 -- --------------------------------------------------------
 
@@ -211,6 +232,12 @@ INSERT INTO `user_login` (`id`, `user_name`, `user_password`) VALUES
 --
 ALTER TABLE `tb_carousel`
   ADD PRIMARY KEY (`id_carousel`);
+
+--
+-- Indexes for table `tb_galeri`
+--
+ALTER TABLE `tb_galeri`
+  ADD PRIMARY KEY (`id_galeri`);
 
 --
 -- Indexes for table `tb_guru`
@@ -261,10 +288,16 @@ ALTER TABLE `tb_carousel`
   MODIFY `id_carousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `tb_galeri`
+--
+ALTER TABLE `tb_galeri`
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tb_jabatan`
@@ -288,7 +321,7 @@ ALTER TABLE `tb_mapel`
 -- AUTO_INCREMENT for table `tb_post`
 --
 ALTER TABLE `tb_post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_login`
