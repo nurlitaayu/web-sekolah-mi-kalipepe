@@ -179,7 +179,7 @@
         for(var key in data){
           tbody += "<tr>";
           tbody += "<td>"+ no++ +"</td>";
-          tbody += "<td>"+ data[key]['kategori']+"</td>";
+          tbody += "<td>id('"+ data[key]['id_kategori'] +"') "+ data[key]['kategori']+"</td>";
           tbody += `<td>
                       <button class="btn btn-xs btn-warning" id="edit" value="${data[key]['id_kategori']}"><i class="fas fa-edit" style="color: #fff;"></i></button>&nbsp
                       <button class="btn btn-xs btn-danger" id="delete" value="${data[key]['id_kategori']}"><i class="fas fa-trash"></i></button>

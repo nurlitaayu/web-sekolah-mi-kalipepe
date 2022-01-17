@@ -45,21 +45,28 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url('cms/pages') ?>" class="nav-link">
+                <a href="<?php echo base_url('cms/profile') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Pages</p>
+                  <p>Profile</p>
                 </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('cms/prestasi') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Prestasi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('cms/galeri') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Galeri</p>
+                </a>
+              </li>
               </li>
               <li class="nav-item">
                 <a href="<?php echo base_url('cms') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Create Post</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url('cms/kategori') ?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Kategori</p>
+                  <p>Berita</p>
                 </a>
               </li>
             </ul>
@@ -81,6 +88,12 @@
             <a href="<?php echo base_url('datajabatan'); ?>" class="nav-link">
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>Data Jabatan</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('cms/kategori') ?>" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Daftar Kategori</p>
             </a>
           </li>
         </ul>

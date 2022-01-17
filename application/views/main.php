@@ -71,7 +71,7 @@
           <?php foreach ($prestasi as $pres) { 
           ?>
           <div class="card">
-            <img src="<?php echo base_url().'assets/foto/fotopost/'.$pres->foto_post ?>"class="card-img-top card-picture" alt="...">
+            <img src="<?php echo base_url().'assets/foto/fotoprestasi/'.$pres->foto_post ?>"class="card-img-top card-picture" alt="...">
             <div class="card-body">
               <h5 class="card-title"><?php echo $pres->judul_post ?></h5>
               <p class="card-text"><?php echo $pres->isi_post ?></p>

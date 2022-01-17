@@ -12,7 +12,22 @@ class M_cms extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
-//End model Post
+//End carousel
+
+//model Prestasi
+	public function add_prestasi($data,$table){
+        $this->db->insert($table,$data);
+        $this->db->insert('tb_post', $data);
+    }
+    public function read_prestasi(){
+    	$this->db->select('*');
+        $this->db->from('tb_post');
+        $this->db->where('id_kategori', '2');
+        $this->db->order_by("id_post", "desc");
+        $query = $this->db->get();
+        return $query->result();
+    }
+//End model Prestasi
 
 //model Post
 	public function add_post($data,$table){
@@ -22,17 +37,12 @@ class M_cms extends CI_Model{
     public function read_post(){
     	$this->db->select('*');
         $this->db->from('tb_post');
-        $this->db->join('tb_kategori', 'tb_kategori.id_kategori=tb_post.id_kategori');
+        $this->db->where('id_kategori', '1');
         $this->db->order_by("id_post", "desc");
         $query = $this->db->get();
         return $query->result();
     }
 //End model Post
-
-
-	public function d_kategori(){
-        return $this->db->get('tb_kategori');
-    }
 
 //model Kategori
 	function tambah_kategori($data){
