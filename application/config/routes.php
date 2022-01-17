@@ -52,6 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['tenaga-pendidik'] = 'home/tenagapendidik';
+$route['gallery'] = 'home/gallery';
+
 $route['carousel'] = 'cms/carousel';
 $route['profile'] = 'cms/profile';
 $route['prestasi'] = 'cms/prestasi';

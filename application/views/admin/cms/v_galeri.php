@@ -38,7 +38,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <button class="btn btn-xs btn-primary card-title" data-toggle="modal" data-target="#add_modal"><i class="fas fa-plus"></i> Buat Postingan</button>
+              <button class="btn btn-xs btn-primary card-title" data-toggle="modal" data-target="#add_modal"><i class="fas fa-plus"></i> Buat Dokumentasi</button>
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
                   <input type="text" id="table_search" class="form-control float-right" placeholder="Search">
@@ -101,7 +101,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Buat Postingan Baru</h4>
+        <h4 class="modal-title">Tambah Dokumentasi</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -109,40 +109,20 @@
       <div class="modal-body">
         <?php echo form_open_multipart('cms/tambah_post'); ?>
           <div class="form-group">
-            <label>Judul Halaman</label>
+            <label>Judul Dokumentasi</label>
             <input type="text" name="judul_post" class="form-control" placeholder="Masukkan Judul">
-            <input type="hidden" name="tanggal_post" value="<?php echo date("Y-m-d"); ?>">
           </div>
           <div class="row">
             <div class="col-sm-8">
               <div class="form-group">
-                <label>Gambar Postingan</label>
+                <label>Upload Dokumentasi</label>
                 <div class="custom-file">
                   <input type="file" name="foto_post" class="custom-file-input" required>
                   <label class="custom-file-label" for="foto">choose file</label>
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="form-group">
-                <label>Kategori</label>
-                <select name="id_kategori" type="text" class="custom-select">
-                  <option value="carousel">Carousel</option>
-                  <option value="carousel">Profile</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <label>Embed Video</label>
-            </div>
-            <div class="col-sm-10">
-              <input type="text" name="embed_video" class="form-control" placeholder="Masukkan link embed youtube">
-            </div>
-          </div>          
-          <div class="form-group">
-            <label>Isi Post</label>
-            <textarea class="form-control" id="ckeditor" name="isi_post"></textarea>
-          </div>
+          </div> 
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-default swalDefaultSuccess" data-dismiss="modal">Close</button>

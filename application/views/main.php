@@ -105,7 +105,7 @@
     </div> 
     <div class="more-button">
       <!-- button halaman tenaga pendidik -->
-      <a href="<?php echo base_url('home/tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
+      <a href="<?php echo base_url('tenaga-pendidik'); ?>" class="btn btn-more" type="button">Lihat Tenaga Pendidik</a>
     </div>  
   </div>
 </section>
@@ -162,7 +162,7 @@
     <div class="swiper-pagination"></div>
     <div class="more-button">
       <!-- button halaman tenaga pendidik -->
-      <a href="<?php echo base_url('home/tenagapendidik'); ?>" class="btn btn-more" type="button">Lihat Gallery</a>
+      <a href="<?php echo base_url('gallery'); ?>" class="btn btn-more" type="button">Lihat Gallery</a>
     </div>  
   </div>
   </div>
