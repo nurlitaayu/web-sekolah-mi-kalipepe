@@ -106,6 +106,17 @@ class Cms extends CI_Controller {
 		$data['prestasi'] = $this->m_cms->read_prestasi();
 		$this->load->view('admin/cms/v_prestasi',$data);
 	}
+	// hapus prestasi
+	public function hapus_prestasi($id,$foto){
+
+        $id_post = $id;
+        $foto = $foto;
+        
+        $this->m_cms->delete_prestasi($id_post,$foto);
+
+        redirect ('cms/prestasi');
+
+    }
 //End Prestasi Controller
 
 

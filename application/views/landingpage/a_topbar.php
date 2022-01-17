@@ -11,7 +11,7 @@
             </div>
           </div> 
         </div>
-        <div class="col-md-4 searchbox-wraper">
+        <!-- <div class="col-md-4 searchbox-wraper">
           <div class="searchbox">
             <form method="get">
               <div class="input-group">
@@ -22,7 +22,7 @@
               </div>
             </form>
           </div>
-        </div>
+        </div> -->
       </div>
       <!-- end row -->
     </div>

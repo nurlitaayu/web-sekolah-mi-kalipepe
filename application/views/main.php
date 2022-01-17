@@ -124,17 +124,17 @@
       <h2>Gallery</h2>
     </div>
   <div class="gallery-slider swiper">
- 
+  <!-- <?php foreach ($galeri as $g) { ?> -->
     <div class="swiper-wrapper align-items-center">
-      <div class="swiper-slide">
-        <a class="gallery-lightbox" >
+      <!-- <div class="swiper-slide">
+        <a class="gallery-lightbox" href="<?php echo base_url().'assets/foto/fotogaleri/'.$g->gambar ?>" >
 
-        <!-- iki dan tempate -->
+         iki dan tempate -->
           <img src="<?php echo base_url().'assets/foto/fotogaleri/'.$g->gambar ?>" class="img-fluid" alt="">
         </a>
-        
-      </div>
-      <!-- <div class="swiper-slide">
+
+      </div> -->
+      <div class="swiper-slide">
         <a class="gallery-lightbox" href="assets/img/gallery/gallery-2.jpg">
           <img src="assets/main/img/gallery/gallery-2.jpg" class="img-fluid" alt="">
         </a>
@@ -168,9 +168,9 @@
         <a class="gallery-lightbox" href="assets/img/gallery/gallery-8.jpg">
           <img src="assets/main/img/gallery/gallery-8.jpg" class="img-fluid" alt="">
         </a>
-      </div> -->
-    </div>
-    
+      </div> 
+   </div>
+    <!-- <?php } ?> -->
     <div class="swiper-pagination"></div>
     <div class="more-button">
       <!-- button halaman galeri -->

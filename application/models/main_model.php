@@ -31,6 +31,14 @@ class Main_model extends CI_Model{
 		return $this->db->get('tb_post', $limit)->result();
 	}
 //end berita model
+
+//Berita Model
+	public function getGaleri($limit){
+		$this->db->where('id_galeri');
+		// $this->db->order_by("id_post", "desc");
+		return $this->db->get('tb_galeri', $limit)->result();
+	}
+//end berita model
 }
 
  ?>

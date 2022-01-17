@@ -21,6 +21,7 @@ class Home extends CI_Controller {
 		$data['prestasi'] = $this->main_model->getPost(3);
 		$data['guru'] = $this->main_model->getGuru(3);
 		$data['berita'] = $this->main_model->getBerita(3);
+		$data['galeri'] = $this->main_model->getGaleri(3);
 		
 		$this->load->view('main',$data,);
 	}

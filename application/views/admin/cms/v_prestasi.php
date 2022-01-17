@@ -77,7 +77,7 @@
                       <!-- button edit -->
                       <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-guru<?php echo $p->id_post; ?>" ><i class="fas fa-edit" style="color: #fff;"></i></button>
                       <!-- button delete -->
-                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Dataguru/hapus_guru/<?php echo $p->id_post; ?><?php echo $p->foto_post ?>" ><i class="fas fa-trash"></i></a>
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>cms/hapus_prestasi/<?php echo $p->id_post; ?><?php echo $p->foto_post ?>" ><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                 </tbody>

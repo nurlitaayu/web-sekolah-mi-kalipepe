@@ -27,6 +27,11 @@ class M_cms extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
+    public function delete_prestasi($id_post, $foto){
+        $this->db->where('id_post', $id_post);
+        $this->db->delete('tb_post', array('id_post' => $id_post));
+        unlink(FCPATH."/foto/fotoprestasi/".$foto);
+    }
 //End model Prestasi
 
 //model galeri
