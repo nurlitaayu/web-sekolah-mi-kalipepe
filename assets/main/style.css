@@ -234,7 +234,7 @@ aside .brand h1{
   overflow: hidden;
 }
 .gallery .swiper-pagination {
-  margin-top: 20px;
+  margin-top: 0px;
   position: relative;
 }
 .gallery .swiper-pagination .swiper-pagination-bullet {
