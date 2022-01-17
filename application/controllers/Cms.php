@@ -7,6 +7,10 @@ class Cms extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
 		$this->load->model('m_cms');
+
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
 	}
 //Slider
 	//Create Post

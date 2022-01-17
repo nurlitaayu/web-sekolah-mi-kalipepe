@@ -7,7 +7,11 @@ class Home extends CI_Controller {
 		$this->load->model('main_model','', TRUE);
 		$this->load->model('m_guru','', TRUE);
 		$this->load->library('pagination');	
-		$this->load->helper('url');			
+		$this->load->helper('url');
+
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
 	}
 
 	public function index()	{

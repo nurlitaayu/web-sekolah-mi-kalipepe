@@ -6,7 +6,11 @@ class Dataguru extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('m_guru','', TRUE);
-		$this->load->helper('url');			
+		$this->load->helper('url');
+
+        if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }
 	}
 
 	public function index()	{

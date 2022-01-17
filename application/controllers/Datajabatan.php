@@ -6,6 +6,10 @@ class DataJabatan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_jabatan');
+
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
 	}
 
 	public function index()	{
