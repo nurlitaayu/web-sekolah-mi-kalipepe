@@ -52,3 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['carousel'] = 'cms/carousel';
+$route['profile'] = 'cms/profile';
+$route['prestasi'] = 'cms/prestasi';
+$route['galeri'] = 'cms/galeri';
+$route['berita'] = 'cms';
+$route['kategori'] = 'cms/kategori';
+
+
+
