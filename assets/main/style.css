@@ -308,19 +308,20 @@ footer .menu h1{
 	text-align: center;
 }
 .sosmed li{
+	padding-top: 5px;
 	display: inline-block;
-	margin-right: 50px;
+	margin-right: 30px;
 }
 .sosmed li a{
 	color: #fff;
-	border: 1px solid rgba(255, 255, 255, 0.7);
+	border: 2px solid rgba(255, 255, 255, 0.7);
 	display: inline-block;
-	height: 50px;
-	width: 50px;
+	height: 40px;
+	width: 40px;
 	text-align: center;
 	border-radius: 50%;
 	font-size: 20px;
-	line-height: 50px;
+	line-height: 40px;
 }
 .copyright {
 	padding: 3px 0;

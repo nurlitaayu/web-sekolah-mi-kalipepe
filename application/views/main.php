@@ -80,8 +80,11 @@
           <div class="card">
             <img src="<?php echo base_url().'assets/foto/fotoprestasi/'.$pres->foto_post ?>"class="card-img-top card-picture" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><?php echo $pres->judul_post ?></h5>
-              <p class="card-text"><?php echo $pres->isi_post ?></p>
+              <h5 class="card-title"><strong><?php echo $pres->judul_post ?></strong></h5>
+              <p class="card-text">
+                <?php echo substr($pres->isi_post,0, 150) ?>
+                <a href="">Baca Selengkapnya</a> 
+              </p>
               <p class="card-text"><small class="text-muted"><?php echo $pres->tanggal_post ?></small></p>
             </div>
           </div>
@@ -118,67 +121,31 @@
 </section>
 
 <!-- ======= Gallery Section ======= -->
-<section id="galeri" class="gallery">
-  <div class="container">
+<section id="gallery" class="gallery">
+  <div class="container" data-aos="fade-up">
     <div class="section-title">
-      <h2>Gallery</h2>
+      <h2>Galerry</h2>
     </div>
-  <div class="gallery-slider swiper">
-  <!-- <?php foreach ($galeri as $g) { ?> -->
-    <div class="swiper-wrapper align-items-center">
-      <!-- <div class="swiper-slide">
-        <a class="gallery-lightbox" href="<?php echo base_url().'assets/foto/fotogaleri/'.$g->gambar ?>" >
+    <div class="gallery-slider swiper">
+      <div class="swiper-wrapper align-items-center">
+        <?php foreach ($galeri as $img) { ?>
+        <div class="swiper-slide">
+          <a class="gallery-lightbox" href="<?php echo base_url().'assets/foto/fotogaleri/'.$img->gambar ?>">
+            <img src="<?php echo base_url().'assets/foto/fotogaleri/'.$img->gambar ?>" class="img-fluid" alt="">
+          </a>
+        </div>
+        <?php } ?>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="more-button">
+  <!-- button halaman galeri -->
+  <a href="<?php echo base_url('gallery'); ?>" class="btn btn-more" type="button">Lihat Gallery</a>
+</div> 
+    </div>
 
-         iki dan tempate -->
-          <img src="<?php echo base_url().'assets/foto/fotogaleri/'.$g->gambar ?>" class="img-fluid" alt="">
-        </a>
+  </div>
+</section><!-- End Gallery Section -->
 
-      </div> -->
-      <div class="swiper-slide">
-        <a class="gallery-lightbox" href="assets/img/gallery/gallery-2.jpg">
-          <img src="assets/main/img/gallery/gallery-2.jpg" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a class="gallery-lightbox" href="assets/img/gallery/gallery-3.jpg">
-          <img src="assets/main/img/gallery/gallery-3.jpg" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a class="gallery-lightbox" href="assets/img/gallery/gallery-4.jpg">
-          <img src="assets/main/img/gallery/gallery-4.jpg" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a class="gallery-lightbox" href="assets/img/gallery/gallery-5.jpg">
-          <img src="assets/main/img/gallery/gallery-5.jpg" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a class="gallery-lightbox" href="assets/img/gallery/gallery-6.jpg">
-          <img src="assets/main/img/gallery/gallery-6.jpg" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a class="gallery-lightbox" href="assets/img/gallery/gallery-7.jpg">
-          <img src="assets/main/img/gallery/gallery-7.jpg" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a class="gallery-lightbox" href="assets/img/gallery/gallery-8.jpg">
-          <img src="assets/main/img/gallery/gallery-8.jpg" class="img-fluid" alt="">
-        </a>
-      </div> 
-   </div>
-    <!-- <?php } ?> -->
-    <div class="swiper-pagination"></div>
-    <div class="more-button">
-      <!-- button halaman galeri -->
-      <a href="<?php echo base_url('gallery'); ?>" class="btn btn-more" type="button">Lihat Gallery</a>
-    </div>  
-  </div>
-  </div>
-</section>
 
 <!-- ======= Berita Section ======= -->
 <section id="berita">

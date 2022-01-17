@@ -26,22 +26,17 @@
       <div class="col-md-2">
         <div class="menu">
           <h1>Navigasi</h1>
-            <div class="submenu">
-              <ul>
+          <div class="submenu">
+            <ul>
               <li><a href="#">Profile</a></li>
               <li><a href="#">Visi dan Misi</a></li>
               <li><a href="#">Struktur Organisasi</a></li>
               <li><a href="#">Pendaftaran PPDB</a></li>
             </ul>
-            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <ul class="sosmed" >
-      <li><a href=""> <i class="fab fa-facebook-f"></i></a></li>
-      <li><a href=""> <i class="fab fa-instagram"></i></a></li>
-      <li><a href=""> <i class="fab fa-youtube"></i></a></li>
-    </ul>    
+    </div>    
   </div>
 </section>
 </footer>
@@ -50,7 +45,7 @@
     <p>Copyright © 2021 | MI Muhammadiyah Kalipepe. All rights reserved.</p>
   </div>  
 <script src="<?php echo base_url('assets/main/js/bootstrap.js') ?>"></script>
-<script src="<?php echo base_url('assets/main/vendor/swiper/swiper-bundle.min.js') ?>"></script>
+<script src="assets/main/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="<?php echo base_url('assets/main/vendor/glightbox/js/glightbox.min.js') ?>"></script>
 
-<script src="<?php echo base_url('assets/main/main.js') ?>"></script>
+<script src="assets/main/main.js"></script>

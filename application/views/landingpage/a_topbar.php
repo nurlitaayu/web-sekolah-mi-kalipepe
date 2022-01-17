@@ -11,18 +11,13 @@
             </div>
           </div> 
         </div>
-        <!-- <div class="col-md-4 searchbox-wraper">
-          <div class="searchbox">
-            <form method="get">
-              <div class="input-group">
-                <input class="form-control" type="" name="" placeholder="Cari Disini">
-                <div class="input-group-addon">
-                  <button class="btn btn-warning" id="my-addon">Cari</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div> -->
+        <div class="col-md-4">
+          <ul class="sosmed" >
+            <li><a href=""> <i class="fab fa-facebook-f"></i></a></li>
+            <li><a href=""> <i class="fab fa-instagram"></i></a></li>
+            <li><a href=""> <i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
       </div>
       <!-- end row -->
     </div>

@@ -9,9 +9,6 @@ class Home extends CI_Controller {
 		$this->load->library('pagination');	
 		$this->load->helper('url');
 
-		if($this->session->userdata('status') != "login"){
-			redirect(base_url("login"));
-		}
 	}
 
 	public function index()	{
@@ -21,7 +18,7 @@ class Home extends CI_Controller {
 		$data['prestasi'] = $this->main_model->getPost(3);
 		$data['guru'] = $this->main_model->getGuru(3);
 		$data['berita'] = $this->main_model->getBerita(3);
-		$data['galeri'] = $this->main_model->getGaleri(3);
+		$data['galeri'] = $this->main_model->getGaleri(6);
 		
 		$this->load->view('main',$data,);
 	}
@@ -31,7 +28,6 @@ class Home extends CI_Controller {
 		$this->load->view('tenaga_pendidik',$data);
 	}
 	public function gallery(){
-		// $data['guru'] = $this->m_guru->read_guru();
 		$this->load->view('gallery');
 	}
 	
